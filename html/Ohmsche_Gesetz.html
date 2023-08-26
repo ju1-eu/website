@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite rund um das Thema Responsive Design...">
+    <title>Thema</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body><div class="container">
+    <header role="banner">
+        <h1>Webseite</h1>
+        <img src="../images/Logo-min.svg" alt="Website Logo" id="header-logo">
+    </header>
+    <nav role="navigation" aria-label="Hauptnavigation">
+        <!-- Ihre Links -->
+        <a href="../index.html" class="nav-link">Start</a>
+    </nav>
+    <main role="main">
+
+<!--update 30-7-23 Ohm‘sche Gesetz-->
+
+<h1>Ohm‘sche Gesetz</h1>
+<pre><code class="language-python"># Quellcode in Python
+import math
+import matplotlib 
+matplotlib.rcParams['text.usetex'] = True # Latex code
+import matplotlib.pyplot as plt 
+
+R1 = 1 # Ohm
+R2 = 2 # Ohm
+R3 = 3 # Ohm
+N=500 
+X=[x / 10 for x in range(N)] # Ampere
+Y1=[R1 * i for i in X]  # Spannung
+Y2=[R2 * i for i in X]  # Spannung
+Y3=[R3 * i for i in X]  # Spannung
+
+
+# Latex
+# Farben: Orange #F28C64 und grau2 #B2B2B2
+plt.plot(X,Y1, label=r'$R_1 = 1~\Omega$', color=&quot;black&quot;)
+plt.plot(X,Y2, label=r'$R_2 = 2~\Omega$', color=&quot;#A71916&quot;)#rot5 #A71916
+plt.plot(X,Y3, label=r'$R_3 = 3~\Omega$', color=&quot;#0D468E&quot;)#blau5 #0D468E
+plt.title(r'Ohmsche Gesetz $U = R \times I$',fontsize=12)
+plt.xlabel(r'\textbf{Strom (A)}')
+plt.ylabel(r'\textbf{Spannung (V)}')
+plt.xlim(0,+10) 
+plt.ylim(0,+10)
+plt.legend()
+plt.savefig(&quot;Diag_Ohmsche_Gesetz.svg&quot;)
+plt.show()
+</code></pre>
+<p><img alt="Ohm‘sche Gesetz" src="../images/Diag_Ohmsche_Gesetz-min.svg" /></p>
+<!--![Ohm‘sche Gesetz](images\Diag_Ohmsche_Gesetz.eps){width=75%}-->
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2023
+        </div>
+    </footer> 
+</div>
+    <!--javascript-->
+    <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+    <script>hljs.highlightAll();</script>
+</body></html>

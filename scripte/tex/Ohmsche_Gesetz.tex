@@ -1,0 +1,82 @@
+% vorlage-main.tex
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage{vorlage-design-main}% vorlage-design-main.sty
+% Bildgröße global ändern
+\setkeys{Gin}{width=0.75\linewidth}
+% Literatur
+\addbibresource{referenzen.bib}
+% Anpassung des Quellcode-Stils
+\lstset{
+  basicstyle=\ttfamily\small,   % Ändern Sie die Schriftgröße des Quellcodes, falls erforderlich.
+  columns=fullflexible,
+  breaklines=true,              % Zeilenumbrüche für zu lange Zeilen
+  postbreak=\mbox{$\hookrightarrow$\space}, % Pfeil am Zeilenumbruch
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {Ö}{{\"O}}1
+           {Ä}{{\"A}}1
+           {Ü}{{\"U}}1
+           {ß}{{\ss}}1,
+  xleftmargin=2em,              % Optional: Linker Abstand
+  xrightmargin=3em,             % Optional: Rechter Abstand
+  showstringspaces=false,
+  showspaces=false             % Zeigt keine Leerzeichen an
+}
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+% Fehler wenn pandoc - Markdown in Latex
+\newcommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+% Titel, Autor und Datum
+\title{Mein optimiertes Dokument}
+%\author{Jan Unger}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\hypertarget{ohmsche-gesetz}{%
+\section{Ohm`sche Gesetz}\label{ohmsche-gesetz}}
+
+\begin{lstlisting}[language=Python]
+# Quellcode in Python
+import math
+import matplotlib 
+matplotlib.rcParams['text.usetex'] = True # Latex code
+import matplotlib.pyplot as plt 
+
+R1 = 1 # Ohm
+R2 = 2 # Ohm
+R3 = 3 # Ohm
+N=500 
+X=[x / 10 for x in range(N)] # Ampere
+Y1=[R1 * i for i in X]  # Spannung
+Y2=[R2 * i for i in X]  # Spannung
+Y3=[R3 * i for i in X]  # Spannung
+
+
+# Latex
+# Farben: Orange #F28C64 und grau2 #B2B2B2
+plt.plot(X,Y1, label=r'$R_1 = 1~\Omega$', color="black")
+plt.plot(X,Y2, label=r'$R_2 = 2~\Omega$', color="#A71916")#rot5 #A71916
+plt.plot(X,Y3, label=r'$R_3 = 3~\Omega$', color="#0D468E")#blau5 #0D468E
+plt.title(r'Ohmsche Gesetz $U = R \times I$',fontsize=12)
+plt.xlabel(r'\textbf{Strom (A)}')
+plt.ylabel(r'\textbf{Spannung (V)}')
+plt.xlim(0,+10) 
+plt.ylim(0,+10)
+plt.legend()
+plt.savefig("Diag_Ohmsche_Gesetz.svg")
+plt.show()
+\end{lstlisting}
+
+\includesvg{../images/Diag_Ohmsche_Gesetz-min.svg}  % Platzhalter
+
+\end{document}

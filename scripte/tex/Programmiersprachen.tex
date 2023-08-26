@@ -1,0 +1,244 @@
+% vorlage-main.tex
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage{vorlage-design-main}% vorlage-design-main.sty
+% Bildgröße global ändern
+\setkeys{Gin}{width=0.75\linewidth}
+% Literatur
+\addbibresource{referenzen.bib}
+% Anpassung des Quellcode-Stils
+\lstset{
+  basicstyle=\ttfamily\small,   % Ändern Sie die Schriftgröße des Quellcodes, falls erforderlich.
+  columns=fullflexible,
+  breaklines=true,              % Zeilenumbrüche für zu lange Zeilen
+  postbreak=\mbox{$\hookrightarrow$\space}, % Pfeil am Zeilenumbruch
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {Ö}{{\"O}}1
+           {Ä}{{\"A}}1
+           {Ü}{{\"U}}1
+           {ß}{{\ss}}1,
+  xleftmargin=2em,              % Optional: Linker Abstand
+  xrightmargin=3em,             % Optional: Rechter Abstand
+  showstringspaces=false,
+  showspaces=false             % Zeigt keine Leerzeichen an
+}
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+% Fehler wenn pandoc - Markdown in Latex
+\newcommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+% Titel, Autor und Datum
+\title{Mein optimiertes Dokument}
+%\author{Jan Unger}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\hypertarget{programmiersprachen}{%
+\section{Programmiersprachen}\label{programmiersprachen}}
+
+Aufgaben zum C/C++ Kurs / Universität Regensburg / Fakultät Physik
+
+\begin{lstlisting}
+# ChatGPT
+Aufgabe: " "
+
+Entwickeln Sie ein Programm in den Programmiersprachen C, C++, Python, Arduino und PHP. 
+
+Das Programm soll: Bei fehlerhaften Eingaben (z.B. wenn der Benutzer keine Zahl eingibt) 
+sollte das Programm den Benutzer darauf hinweisen und ihn erneut zur Eingabe auffordern.
+
+Anforderungen:
+
+-   Implementieren Sie Fehlerprüfungen für die Eingabe.
+-   Kommentieren Sie den Code auf Deutsch, wo es sinnvoll und notwendig ist.
+-   Befolgen Sie die Best Practices
+
+Nachdem Sie das Programm in allen fünf Programmiersprachen erstellt haben, 
+dokumentieren Sie die Testergebnisse in Markdown.
+\end{lstlisting}
+
+\hypertarget{code-auszufuxfchren}{%
+\section{Code auszuführen}\label{code-auszufuxfchren}}
+
+\hypertarget{c}{%
+\subsubsection{C:}\label{c}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Installieren Sie einen C-Compiler, z. B. GCC.
+\item
+  Speichern Sie den Code in einer Datei namens
+  {\lstinline!hello.c!}.
+\item
+  Öffnen Sie das Terminal oder die Kommandozeile.
+\item
+  Kompilieren Sie den Code mit:
+  {\lstinline!gcc hello.c -o hello!}
+\item
+  Führen Sie das Programm aus: {\lstinline!./hello!} (oder
+  {\lstinline!hello.exe!} auf Windows).
+\end{enumerate}
+
+\hypertarget{c-1}{%
+\subsubsection{C++:}\label{c-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Installieren Sie einen C++-Compiler, z. B. G++.
+\item
+  Speichern Sie den Code in einer Datei namens
+  {\lstinline!hello.cpp!}.
+\item
+  Öffnen Sie das Terminal oder die Kommandozeile.
+\item
+  Kompilieren Sie den Code mit:
+  {\lstinline!g++ hello.cpp -o hello!}
+\item
+  Führen Sie das Programm aus: {\lstinline!./hello!} (oder
+  {\lstinline!hello.exe!} auf Windows).
+\end{enumerate}
+
+\hypertarget{python}{%
+\subsubsection{Python:}\label{python}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Installieren Sie Python von
+  \href{https://www.python.org/}{python.org}.
+\item
+  Speichern Sie den Code in einer Datei namens
+  {\lstinline!hello.py!}.
+\item
+  Öffnen Sie das Terminal oder die Kommandozeile.
+\item
+  Führen Sie das Skript aus: {\lstinline!python hello.py!}
+\end{enumerate}
+
+\hypertarget{arduino}{%
+\subsubsection{Arduino:}\label{arduino}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Installieren Sie die Arduino IDE von der
+  \href{https://www.arduino.cc/}{Arduino-Website}.
+\item
+  Öffnen Sie die Arduino IDE und kopieren Sie den Code in das Textfeld.
+\item
+  Verbinden Sie Ihren Arduino über USB.
+\item
+  Wählen Sie unter {\lstinline!Werkzeuge!} -\textgreater{}
+  {\lstinline!Port!} den entsprechenden COM-Port aus.
+\item
+  Klicken Sie auf {\lstinline!Hochladen!}.
+\item
+  Öffnen Sie den Seriellen Monitor, um Eingaben zu tätigen und Ausgaben
+  zu sehen.
+\end{enumerate}
+
+\hypertarget{php}{%
+\subsubsection{PHP:}\label{php}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Installieren Sie PHP von \href{https://www.php.net/}{php.net}.
+\item
+  Speichern Sie den Code in einer Datei namens
+  {\lstinline!hello.php!}.
+\item
+  Öffnen Sie das Terminal oder die Kommandozeile.
+\item
+  Führen Sie das Skript aus: {\lstinline!php hello.php!}
+\end{enumerate}
+
+\hypertarget{makefile}{%
+\section{Makefile}\label{makefile}}
+
+Ein {\lstinline!Makefile!} ist ein nützliches Tool, um
+Build-Prozesse zu automatisieren. Es ist besonders hilfreich, wenn Sie
+mehrere Dateien haben oder Abhängigkeiten zwischen diesen Dateien
+bestehen. Für den bereitgestellten Code (eine einfache
+{\lstinline!hello.c!} für C und
+{\lstinline!hello.cpp!} für C++) kann ein
+{\lstinline!Makefile!} recht einfach sein.
+
+Hier ist ein {\lstinline!Makefile!}, das sowohl für den C-
+als auch für den C++-Code verwendet werden kann:
+
+\begin{lstlisting}[language=make]
+# Compiler und Flags definieren
+CC = gcc
+CXX = g++
+CFLAGS = -std=c17 -Wall -O2
+CXXFLAGS = -std=c++20 -Wall -O2
+LDFLAGS = 
+
+# Ziel- und Quell-Dateien definieren
+C_SOURCES = main.c
+CPP_SOURCES = main.cpp
+C_OBJECTS = $(C_SOURCES:.c=.o)
+CPP_OBJECTS = $(CPP_SOURCES:.cpp=.o)
+TARGET_C = main_c
+TARGET_CPP = main_cpp
+
+# Regel, um das C-Programm zu erstellen
+$(TARGET_C): $(C_OBJECTS)
+    $(CC) $(C_OBJECTS) -o $(TARGET_C) $(LDFLAGS)
+
+# Regel, um das C++-Programm zu erstellen
+$(TARGET_CPP): $(CPP_OBJECTS)
+    $(CXX) $(CPP_OBJECTS) -o $(TARGET_CPP) $(LDFLAGS)
+
+# Regel, um C-Objekt-Dateien zu erstellen
+%.o: %.c
+    $(CC) -c $(CFLAGS) $< -o $@
+
+# Regel, um C++-Objekt-Dateien zu erstellen
+%.o: %.cpp
+    $(CXX) -c $(CXXFLAGS) $< -o $@
+
+# Zusätzliche nützliche Regeln
+clean:
+    rm -f $(C_OBJECTS) $(CPP_OBJECTS) $(TARGET_C) $(TARGET_CPP)
+
+all: $(TARGET_C) $(TARGET_CPP)
+\end{lstlisting}
+
+Um die Programme zu kompilieren, können Sie folgende Befehle verwenden:
+
+\begin{itemize}
+\tightlist
+\item
+  Für das C-Programm: {\lstinline!make $(TARGET\_C)!}
+\item
+  Für das C++-Programm: {\lstinline!make $(TARGET\_CPP)!}
+\item
+  Für beide Programme: {\lstinline!make all!}
+\item
+  Zum Bereinigen der kompilierten Dateien:
+  {\lstinline!make clean!}
+\end{itemize}
+
+Stellen Sie sicher, dass Sie die Variablen
+{\lstinline!C\_SOURCES, CPP\_SOURCES, TARGET\_C und TARGET\_CPP!}
+an Ihren eigenen Code anpassen. % Platzhalter
+
+\end{document}

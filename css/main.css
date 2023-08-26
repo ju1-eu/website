@@ -1,0 +1,241 @@
+:root {
+    /* Farben */
+    --primary-bg-color: #25383C;
+    --secondary-bg-color: #f4f4f4;
+    --primary-text-color: #333;
+    --secondary-text-color: #808080;
+    --accent-color: #B82327;
+    --link-color: #25383C;
+    --link-hover-color: #B82327;
+
+    /* Abstände und Größen */
+    --base-padding: 1em;
+    --double-padding: 2em;
+    --half-padding: 0.5em;
+    --container-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+    --container-max-width-small: 45em;
+    --container-max-width-large: 75em;
+    --base-font-size: 1em; 
+    --small-font-size: 0.9em;
+    --large-font-size: 1.2em;
+
+    /* Schriftarten */
+    --primary-font: 'Source Sans Pro', sans-serif;
+
+    /* Bildgrößen */
+    --responsive-img-max-width: 12em;
+    --image-hover-opacity: 0.8;
+    --image-hover-brightness: 80%;
+    --code-font-size: 1em;
+
+    /* Karten */
+    --card-fixed-height: 12em; /* Setzt die Höhe der Inhaltskarten */
+    --card-bg-color: #ffffff;
+    --card-border-color: #e0e0e0;
+    --card-border-radius: 0.3em;
+    --card-padding: 1em;
+    --card-header-font-size: 1.2em;
+    --card-body-font-size: 1em;
+    --card-hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --card-padding-mobile: 1.5em;
+    --card-bg-hover-color: var(--secondary-bg-color);
+}
+
+
+/* Verwende eine einzelne Regel für alle Elemente, die Flexbox verwenden */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: start; /* Für die Vertikalzentrierung oben */
+    font-family: var(--primary-font);
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-text-color);
+    font-size: var(--base-font-size);
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width-large);
+    padding: var(--base-padding);
+    background-color: #fff;
+    box-shadow: var(--container-shadow);
+    margin: var(--base-padding) 0;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  /* um die Elemente in der Mitte auszurichten */
+    padding: var(--half-padding) var(--double-padding);
+    background-color: var(--primary-bg-color);
+    color: var(--secondary-text-color);
+}
+
+
+#header-logo {
+    height: 3em; 
+    margin-left: 1em; 
+}
+
+pre {
+    background-color: #f0f0f0;
+    border: 0.06em solid #ccc;
+    padding: 1em;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+a, .nav-link {
+    text-decoration: none;
+    transition: color 0.3s ease, outline 0.3s ease, background-color 0.3s ease;
+    padding: 0.2em 0.4em; 
+    color: var(--link-color);
+}
+
+a:hover, .nav-link:hover {
+    color: var(--link-hover-color);
+    background-color: var(--secondary-bg-color);
+}
+
+a:focus, .nav-link:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+
+figure {
+    text-align: center;
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center; 
+    height: 1.5em;  
+    padding: var(--base-padding) var(--double-padding);
+    background-color: var(--primary-bg-color);
+    color: var(--secondary-text-color);
+    align-items: center; /* Fügt vertikale Zentrierung hinzu */
+}
+
+footer nav[role="navigation"] {
+    --link-color: #808080;
+}
+
+
+img:hover {
+    opacity: var(--image-hover-opacity);
+    filter: brightness(var(--image-hover-brightness));
+}
+
+img.responsive, .card-header img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em; /* Zwischenraum zwischen den Karten */
+    justify-content: space-between;
+}
+
+.card-link {
+    flex: 1 1 28em; /* Hier können Sie die Breite der Karten anpassen. 28em sorgt dafür, dass maximal zwei Karten nebeneinander angezeigt werden. */
+    min-width: 17.5em; /* Die minimale Breite der Karten, um sicherzustellen, dass sie auch auf kleineren Bildschirmen gut aussehen */
+}
+
+.card-content {
+    padding: var(--card-padding-mobile);
+    height: var(--card-fixed-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    height: 15em; /* Stellen Sie diese auf die gewünschte Höhe ein */
+    overflow: hidden; /* Dies stellt sicher, dass das Bild nicht über die angegebene Höhe hinausgeht */
+}
+
+.card-header img {
+    /*width: 30%;height: auto;*/
+    object-fit: cover; /* Dies sorgt dafür, dass das Bild seine Proportionen behält, während es die gesamte Höhe und Breite des Elternelements ausfüllt. */
+}
+
+
+
+/* Media Queries - Mobile First Ansatz */
+@media screen and (max-width: 30em) {{
+    header, nav, main, footer {
+        padding: var(--half-padding) var(--base-padding);
+    }
+
+    body {
+        font-size: var(--small-font-size);
+    }
+
+    nav a {
+        margin-right: var(--half-padding);
+    }
+}
+
+@media screen and (min-width: 30.1em) and (max-width: 64em) {
+    header, nav, main, footer {
+        padding: var(--half-padding) var(--double-padding);
+    }
+
+    .container {
+        max-width: var(--container-max-width-small);
+    }
+
+    nav a {
+        padding: var(--half-padding);
+        border-bottom: 2px solid var(--accent-color);
+    }
+}
+
+@media screen and (min-width: 64.1em) {
+    header, nav, main, footer {
+        padding: var(--base-padding) var(--double-padding);
+    }
+
+    nav a {
+        margin: 0 var(--base-padding);
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite rund um das Thema Responsive Design...">
+    <title>Thema</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body><div class="container">
+    <header role="banner">
+        <h1>Webseite</h1>
+        <img src="../images/Logo-min.svg" alt="Website Logo" id="header-logo">
+    </header>
+    <nav role="navigation" aria-label="Hauptnavigation">
+        <!-- Ihre Links -->
+        <a href="../index.html" class="nav-link">Start</a>
+    </nav>
+    <main role="main">
+
+<!--update 30-7-23 belasteter Spannungsteiler-->
+<h1>belasteter Spannungsteiler</h1>
+<p><strong>Aufgabenstellung: Untersuchung eines belasteten Spannungsteilers bei unterschiedlichen Lastströmen</strong></p>
+<p><strong>Teil A:</strong> 
+Entwickeln Sie ein Python-Programm zur Analyse eines belasteten Spannungsteilers, der mit verschiedenen Lastströmen konfrontiert wird.</p>
+<p><strong>Beschreibung der Schaltung:</strong> 
+Ein Spannungsteiler besteht aus zwei Widerständen, $R_1$ und $R_2$, die in Reihe geschaltet sind. Am Übergang zwischen $R_1$ und $R_2$, dem Ausgangspunkt, ist ein Lastwiderstand $R_{\text{Last}}$ angeschlossen. Die Schaltung wird durch eine Eingangsspannung $U_{\text{in}} = 5 \, \text{V}$ gespeist. Am Lastwiderstand liegt eine Spannung von $U_{\text{Last}} = 3,3 \, \text{V}$ an. Der Strom $I_2$, der durch $R_2$ fließt, beträgt konstant 10% des Laststroms $I_3$.</p>
+<p><strong>Analyseziele:</strong>  </p>
+<p>a) <strong>Bestimmen Sie die Widerstandswerte $R_1$ und $R_2$ basierend auf den gegebenen Verhältnissen von $I_2$ zu $I_3$.</strong><br />
+b) <strong>Für verschiedene Lastströme $I_3$, berechnen Sie die Ströme $I_1$ und $I_2$. Die Ergebnisse sollen in mA dargestellt werden.</strong><br />
+c) <strong>Ermitteln Sie die Leistungen, die an $R_1$ und $R_2$ abfallen, mittels der Formel $P = U^2/R$. Die Leistungen sollten in mW angegeben werden.</strong><br />
+d) <strong>Bewerten Sie, ob 1/4-Watt-Widerstände für $R_1$ und $R_2$ unter den gegebenen Lastbedingungen geeignet sind.</strong></p>
+<p>Implementieren Sie die Ergebnisse mittels einer grafischen Darstellung in Python mit <code>matplotlib</code>. Testen Sie Ihr Programm mit den Lastströmen 10 mA, 20 mA und 30 mA.</p>
+<p><strong>Teil B:</strong> 
+Erläutern Sie die Funktionsweise und die Berechnungen eines belasteten Spannungsteilers ausführlich und nutzen Sie dabei die Markdown-Sprache.</p>
+<p><strong>Erforderliche Inhalte:</strong>  </p>
+<ul>
+<li>Skizzieren Sie den Schaltplan und erläutern Sie das Grundprinzip des belasteten Spannungsteilers.</li>
+<li>Zeigen Sie die notwendigen Berechnungen systematisch auf und präsentieren Sie die Resultate.</li>
+<li>Visualisieren Sie die Schaltung mit einem geeigneten Schaltbild, z.B. einem ASCII-Schaltbild.</li>
+</ul>
+<pre><code class="language-python"># Schaltplan: Belasteter Spannungsteiler
++Uin o-+---------------------
+       |
+      [R1]
+       |
+       +------+--o Uout 
+       |      |
+       |      o
+      [R2] [R_Last] 10mA, 20mA, 30mA
+       |      o
+       |      |
+ GND o-+------+-------------
+</code></pre>
+<p>\newpage
+**Python-Code zur Berechnung</p>
+<pre><code class="language-python"># Quellcode in Python
+import matplotlib.pyplot as plt
+import matplotlib 
+matplotlib.rcParams['text.usetex'] = True # Latex code
+
+# Gegebene Werte
+U_in = 5  # Eingangsspannung in V
+U_Last = 3.3  # Spannung an R_Last in V
+
+# Lastströme in A
+I_3_values_A = [0.01, 0.02, 0.03]  # 10mA, 20mA, 30mA
+# Lastströme in mA zur Beschriftung der x-Achse
+I_3_values_mA = [10, 20, 30]
+
+# Listen für die Ergebnisse
+R1_values = []
+R2_values = []
+P_R1_values = []
+P_R2_values = []
+
+# Berechnung für jeden Laststrom
+for I_3 in I_3_values_A:
+    I_2 = 0.1 * I_3
+    I_1 = I_3 + I_2 
+    R_2 = U_Last / I_2
+    R_1 = (U_in - U_Last) / I_1
+    P_R1 = (U_in - U_Last)**2 / R_1
+    P_R2 = U_Last**2 / R_2
+    R1_values.append(R_1)
+    R2_values.append(R_2)
+    P_R1_values.append(P_R1*1000)  # Umwandlung in mW
+    P_R2_values.append(P_R2*1000)  # Umwandlung in mW
+
+# Plotten der Ergebnisse
+# Farbe: Orange #F28C64 grau2 #B2B2B2 rot5 #A71916 blau5 #0D468E
+plt.figure(figsize=(250/25.4, 176/25.4))  # Größe in inches (B5 format: 250mm x 176mm)
+
+# Widerstandswerte
+plt.subplot(2, 2, 1)
+plt.plot(I_3_values_mA, R1_values, label=&quot;R1&quot;, marker='o', color='#0D468E')
+plt.plot(I_3_values_mA, R2_values, label=&quot;R2&quot;, marker='o', color='#A71916')
+plt.xlabel(r&quot;\textbf{Laststrom I_3 (mA)}&quot;)
+plt.ylabel(r&quot;\textbf{Widerstand (Ohm)}&quot;)
+plt.title(r&quot;Widerstandswerte&quot;,fontsize=12)
+plt.legend()
+plt.grid(True)
+
+# Leistungswerte
+plt.subplot(2, 2, 2)
+plt.plot(I_3_values_mA, P_R1_values, label=&quot;P_R1&quot;, marker='o', color='#0D468E')
+plt.plot(I_3_values_mA, P_R2_values, label=&quot;P_R2&quot;, marker='o', color='#A71916')
+plt.xlabel(r&quot;\textbf{Laststrom I_3 (mA)}&quot;)
+plt.ylabel(r&quot;\textbf{Leistung (mW)}&quot;)
+plt.title(r&quot;Leistungswerte&quot;,fontsize=12)
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.savefig(&quot;Diag_belasteter_Spannungsteiler.svg&quot;)# SVG-Vektorgrafik
+plt.show()
+</code></pre>
+<p><img alt="belasteter Spannungsteiler" src="../images/Diag_belasteter_Spannungsteiler-min.svg" />    </p>
+<!--![Diag_belasteter_Spannungsteiler](images\Diag_belasteter_Spannungsteiler.eps){width=85%}-->
+
+<p>\newpage
+<strong>Grundprinzip des belasteten Spannungsteilers:</strong></p>
+<p>Ein Spannungsteiler besteht im Grunde aus zwei Widerständen in Reihe, zwischen denen die Spannung aufgeteilt wird. Bei Anwendung einer Last ändert sich die Spannungsaufteilung und die Stromverhältnisse entsprechend der Größe der Last.</p>
+<p><strong>Schaltbild:</strong></p>
+<pre><code class="language-python">+5V
+ |
+ R1
+ |
+ +----&gt; Ausgang (3V3) Lastströme: Werte 10 mA, 20 mA und 30 mA
+ |
+ R2
+ |
+ GND
+</code></pre>
+<p><strong>Berechnung</strong></p>
+<p>Gegebene Werte:</p>
+<ul>
+<li>$U_{in} = 5V$</li>
+<li>$U_{Last} = 3.3V$</li>
+<li>$I_2$ ist 10% von $I_3$</li>
+<li>Formeln: </li>
+<li>$R_2 = \frac{U_{Last}}{I_2}$</li>
+<li>$R_1 = \frac{U_{in} - U_{Last}}{I_1}$</li>
+<li>$P_{R1} = \frac{(U_{in} - U_{Last})^2}{R_1}$</li>
+<li>$P_{R2} = \frac{U_{Last}^2}{R_2}$</li>
+</ul>
+<p>Für $I_3 = 10mA$:
+$I_2 = 0.1 \times 10mA = 1mA$
+$I_1 = 11mA$</p>
+<p>$R_2 = \frac{3.3V}{1mA} = 3.3k\Omega$
+$R_1 = \frac{5V - 3.3V}{11mA} = 154.55\Omega \approx 155\Omega$</p>
+<p>$P_{R1} = \frac{1.7^2}{155\Omega} = 18.71mW$
+$P_{R2} = \frac{3.3^2}{3.3k\Omega} = 3.3mW$</p>
+<p>Für $I_3 = 20mA$:
+$I_2 = 2mA$
+$I_1 = 22mA$</p>
+<p>$R_2 = \frac{3.3V}{2mA} = 1.65k\Omega$
+$R_1 = \frac{1.7V}{22mA} = 77.27\Omega \approx 77\Omega$</p>
+<p>$P_{R1} = \frac{1.7^2}{77\Omega} = 37.42mW$
+$P_{R2} = \frac{3.3^2}{1.65k\Omega} = 6.6mW$</p>
+<p>Für $I_3 = 30mA$:
+$I_2 = 3mA$
+$I_1 = 33mA$</p>
+<p>$R_2 = \frac{3.3V}{3mA} = 1.1k\Omega$
+$R_1 = \frac{1.7V}{33mA} = 51.52\Omega \approx 52\Omega$</p>
+<p>$P_{R1} = \frac{1.7^2}{52\Omega} = 55.63mW$
+$P_{R2} = \frac{3.3^2}{1.1k\Omega} = 9.9mW$</p>
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2023
+        </div>
+    </footer> 
+</div>
+    <!--javascript-->
+    <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+    <script>hljs.highlightAll();</script>
+</body></html>

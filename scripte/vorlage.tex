@@ -1,0 +1,104 @@
+\documentclass[12pt,a4paper]{scrartcl}
+\setlength{\parindent}{0pt} % Kein Einzug für neue Absätze
+\setlength{\parskip}{0.3\baselineskip} % Vertikaler Abstand zwischen Absätzen
+
+
+% --------- Seitenränder ---------
+\usepackage[margin=2cm]{geometry}
+\usepackage{lastpage}
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\ofoot{Seite \thepage\ von \pageref{LastPage}}
+
+
+% --------- Grundlegende Einstellungen ---------
+\usepackage{ifxetex}
+% Entscheidung zwischen pdflatex und xelatex
+\ifxetex
+    % Für xelatex
+    %\usepackage{fontspec}
+    %\usepackage{unicode-math}
+    %\setmainfont{Source Sans Pro}
+    %\setsansfont{Source Sans Pro}
+    %\setmonofont{Source Code Pro}
+    %\setmathfont{STIX Two Math}    
+    %\setmathrm{Source Serif Pro}
+    %\setmathsf{Source Sans Pro}
+    %\setmathtt{Source Code Pro}
+\else
+    % Für pdflatex
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{sourcesanspro}
+    \usepackage[scaled]{sourcecodepro}
+    % Das Paket 'sourceserifpro' existiert derzeit (bis zu meinem letzten Update im September 2021) nicht für pdflatex.
+    % Sie können jedoch die folgende Zeile verwenden, um eine ähnliche Serifenschrift für Mathematik zu verwenden:
+    \usepackage{mathpazo}
+\fi
+
+% --------- Typografie und Sprache ---------
+\usepackage[ngerman]{babel}
+\usepackage{microtype}
+\usepackage{amsmath, amssymb}
+
+% --------- Bilder, Tabellen und Listen ---------
+\usepackage{graphicx}
+\usepackage{svg}
+\setkeys{Gin}{width=0.75\linewidth}% Bildgröße global
+\usepackage{tabularx}
+\usepackage{listings}
+
+% Anpassung des Quellcode-Stils
+\lstset{
+  basicstyle=\ttfamily\small,   % Ändern Sie die Schriftgröße des Quellcodes, falls erforderlich.
+  columns=fullflexible,
+  breaklines=true,              % Zeilenumbrüche für zu lange Zeilen
+  postbreak=\mbox{$$\hookrightarrow$$\space}, % Pfeil am Zeilenumbruch
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {Ö}{{\"O}}1
+           {Ä}{{\"A}}1
+           {Ü}{{\"U}}1
+           {ß}{{\ss}}1,
+  xleftmargin=2em,              % Optional: Linker Abstand
+  xrightmargin=3em,             % Optional: Rechter Abstand
+  showstringspaces=false,
+  showspaces=false             % Zeigt keine Leerzeichen an
+}
+
+
+
+
+% --------- Zitate und Bibliographie ---------
+\usepackage{csquotes}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{referenzen.bib}
+
+% --------- Hyperlinks und interaktive Elemente ---------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Fehler wenn pandoc - Markdown in Latex
+\newcommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+
+% Titel, Autor und Datum
+\title{Mein optimiertes Dokument}
+%\author{Max Mustermann}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+$body$  % Hier wird der Inhalt der Markdown-Datei eingefügt
+
+\end{document}

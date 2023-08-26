@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite rund um das Thema Responsive Design...">
+    <title>Thema</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body><div class="container">
+    <header role="banner">
+        <h1>Webseite</h1>
+        <img src="../images/Logo-min.svg" alt="Website Logo" id="header-logo">
+    </header>
+    <nav role="navigation" aria-label="Hauptnavigation">
+        <!-- Ihre Links -->
+        <a href="../index.html" class="nav-link">Start</a>
+    </nav>
+    <main role="main">
+
+<!--update 1-8-23 Markdown zu HTML Konverter-->
+
+<h2>Markdown zu HTML Konverter</h2>
+<h3>Überblick</h3>
+<p>Dieses Skript ermöglicht die Konvertierung von Text, der in Markdown verfasst wurde, in HTML. Es ist in PHP geschrieben und verwendet die <code>Parsedown</code>-Bibliothek, um eine korrekte Umsetzung des Markdown-Formats sicherzustellen.</p>
+<h3>Installation</h3>
+<ol>
+<li>
+<p><strong>Voraussetzungen</strong></p>
+<ul>
+<li>Ein Server mit PHP-Unterstützung.</li>
+<li><a href="https://getcomposer.org/">Composer</a>, ein Werkzeug für die Abhängigkeitsverwaltung in PHP.</li>
+</ul>
+</li>
+<li>
+<p><strong>Bibliothek installieren</strong>
+    Nach der Installation von Composer führt man den folgenden Befehl im Hauptverzeichnis des Projekts aus:</p>
+<p>```bash</p>
+<h1>Terminal</h1>
+<p>php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+mkdir -p /usr/local/bin
+mv composer.phar /usr/local/bin/composer
+composer
+composer require erusev/parsedown
+```</p>
+<p>Dies wird die <code>Parsedown</code>-Bibliothek in das Projekt herunterladen und installieren.</p>
+</li>
+<li>
+<p><strong>Skript bereitstellen</strong>
+    Das zuvor bereitgestellte PHP-Skript kann in einem geeigneten Verzeichnis auf dem Server abgelegt werden.</p>
+</li>
+</ol>
+<h3>Scriptaufruf</h3>
+<p>Nachdem alles installiert wurde, kann man das Skript über einen Webbrowser aufrufen, indem man die entsprechende URL in die Adressleiste des Browsers eingibt. Zum Beispiel:</p>
+<pre><code>http://meinedomain.de/pfad/zum/script.php
+</code></pre>
+<h3>Funktionsweise</h3>
+<p>Nach dem Aufrufen des Skripts im Browser sieht man ein Formularfeld, in das Markdown-Text eingegeben werden kann. Nachdem der Text eingegeben und das Formular abgeschickt wurde, zeigt das Skript den eingegebenen Markdown-Text als HTML formatiert an.</p>
+<h3>Testergebnisse</h3>
+<p>Das Skript wurde mit verschiedenen Markdown-Eingaben getestet, einschließlich, aber nicht beschränkt auf:</p>
+<ul>
+<li>Überschriften</li>
+<li>Listen (sowohl geordnet als auch ungeordnet)</li>
+<li>Links</li>
+<li>Bilder</li>
+<li>Textformatierungen wie <strong>Fett</strong>, <em>Kursiv</em> und <code>Code</code>.</li>
+</ul>
+<p>In allen Testszenarien wurde der Markdown-Text korrekt in HTML umgewandelt und angezeigt.</p>
+<h3>Sicherheitshinweis</h3>
+<p>Das Skript verwendet <code>htmlspecialchars</code> zur Behandlung von Benutzereingaben, um Cross-Site-Scripting-Attacken (XSS) zu verhindern. Es ist jedoch immer ratsam, weitere sicherheitsrelevante Aspekte im Auge zu behalten und das Skript regelmäßig auf Sicherheitslücken zu überprüfen, insbesondere wenn es in einer Produktionsumgebung eingesetzt wird.</p>
+<h3>Schlussfolgerung</h3>
+<p>Das bereitgestellte Skript ist ein nützliches Werkzeug, um Markdown schnell und einfach in HTML umzuwandeln. Es bietet eine einfache Benutzeroberfläche und zuverlässige Konvertierungsfunktionen.</p>
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2023
+        </div>
+    </footer> 
+</div>
+    <!--javascript-->
+    <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+    <script>hljs.highlightAll();</script>
+</body></html>

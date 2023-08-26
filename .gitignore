@@ -1,0 +1,3 @@
+# Hier Dateien und Verzeichnisse angeben, die von der Versionskontrolle ausgeschlossen werden sollen
+
+.DS_Store

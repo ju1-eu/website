@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite rund um das Thema Responsive Design...">
+    <title>Thema</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body><div class="container">
+    <header role="banner">
+        <h1>Webseite</h1>
+        <img src="../images/Logo-min.svg" alt="Website Logo" id="header-logo">
+    </header>
+    <nav role="navigation" aria-label="Hauptnavigation">
+        <!-- Ihre Links -->
+        <a href="../index.html" class="nav-link">Start</a>
+    </nav>
+    <main role="main">
+
+<!--update 30-7-23 Parallelschaltung in Python-->
+<h1>Parallelschaltung</h1>
+<p><strong>Aufgabenstellung: Elektrische Eigenschaften einer Parallelschaltung von Widerständen</strong></p>
+<p><strong>Teil A:</strong> 
+Entwickle ein Python-Programm, das die elektrischen Eigenschaften einer Parallelschaltung von drei Widerständen berechnet.</p>
+<p><strong>Eingabe:</strong> 
+Drei Widerstandswerte in Ohm und eine Spannungsquelle von 12 V.</p>
+<p><strong>Gesuchte Ausgaben:</strong></p>
+<ul>
+<li>Teilströme über jeden Widerstand.</li>
+<li>Gesamtstrom durch die Schaltung.</li>
+<li>Gesamtleistung der Schaltung.</li>
+<li>Leistung über jeden Widerstand.</li>
+<li>Gesamtwiderstand der Schaltung.</li>
+</ul>
+<p>Nutze das Modul <code>matplotlib</code> für Python, um die Ergebnisse grafisch darzustellen. Teste dein Programm anschließend mit drei exemplarischen Widerstandswerten.</p>
+<p><strong>Teil B:</strong> 
+Erläutere die Berechnungen für eine Parallelschaltung von Widerständen mit Hilfe von Markdown.</p>
+<p><strong>Inhalt:</strong></p>
+<ul>
+<li>Beschreibung der gegebenen Werte und der gesuchten Größen.</li>
+<li>Manuelle Berechnung der oben genannten Größen.</li>
+<li>Darstellung der Parallelschaltung mit Hilfe eines einfachen ASCII-Schaltplans.</li>
+</ul>
+<p>Verwende die gegebenen Formeln und Lösungen, um die Teile A und B entsprechend auszuarbeiten.</p>
+<p><strong>Schaltplan</strong></p>
+<pre><code>       +--R1--+
+       |      |
++12V---+--R2--+---GND
+       |      |
+       +--R3--+
+</code></pre>
+<p>\newpage
+<strong>Python-Code zur Berechnung und grafischen Darstellung</strong></p>
+<pre><code class="language-python"># Quellcode in Python
+import matplotlib.pyplot as plt
+import matplotlib 
+matplotlib.rcParams['text.usetex'] = True # Latex code
+
+# Funktion zur Berechnung der Werte für eine Parallelschaltung
+def parallelschaltung(R1, R2, R3, U):
+    # Berechnung des Gesamtwiderstands
+    R_ges = 1 / (1/R1 + 1/R2 + 1/R3)
+    # Teilströme berechnen
+    I1 = U / R1
+    I2 = U / R2
+    I3 = U / R3
+    # Gesamtstrom
+    I_ges = I1 + I2 + I3
+    # Leistungen berechnen
+    P_ges = U * I_ges
+    P1 = U * I1
+    P2 = U * I2
+    P3 = U * I3
+    return I1, I2, I3, I_ges, P_ges, P1, P2, P3, R_ges
+
+# Testwerte
+R1 = 10  # Ohm
+R2 = 20  # Ohm
+R3 = 30  # Ohm
+U = 12   # Volt
+
+I1, I2, I3, I_ges, P_ges, P1, P2, P3, R_ges = parallelschaltung(R1, R2, R3, U)
+
+# Ausgabe der berechneten Werte
+print(f&quot;Teilstrom über R1, I1 = {I1:.2f} A&quot;)
+print(f&quot;Teilstrom über R2, I2 = {I2:.2f} A&quot;)
+print(f&quot;Teilstrom über R3, I3 = {I3:.2f} A&quot;)
+print(f&quot;Gesamtstrom, I_ges = {I_ges:.2f} A&quot;)
+print(f&quot;Gesamtleistung, P_ges = {P_ges:.2f} W&quot;)
+print(f&quot;Leistung über R1, P1 = {P1:.2f} W&quot;)
+print(f&quot;Leistung über R2, P2 = {P2:.2f} W&quot;)
+print(f&quot;Leistung über R3, P3 = {P3:.2f} W&quot;)
+print(f&quot;Gesamtwiderstand, R_ges = {R_ges:.2f} Ohm&quot;)
+
+# Grafische Darstellung
+widerstaende = [&quot;R1&quot;, &quot;R2&quot;, &quot;R3&quot;]
+teilstroeme = [I1, I2, I3]
+leistungen = [P1, P2, P3]
+
+# Farbe: Orange #F28C64 grau2 #B2B2B2 rot5 #A71916 blau5 #0D468E
+plt.figure(figsize=(250/25.4, 176/25.4))  # Größe in inches (B5 format: 250mm x 176mm)plt.figure(figsize=(12, 5))
+plt.subplot(1, 2, 1)
+plt.bar(widerstaende, teilstroeme, color='#0D468E')#blau5 #0D468E
+plt.title(r'Teilströme',fontsize=12)#
+plt.ylabel(r'\textbf{Strom (A)}')
+plt.xlabel(r'\textbf{Widerstand}')
+plt.subplot(1, 2, 2)
+plt.bar(widerstaende, leistungen, color='#A71916')#rot5 #A71916
+plt.title(r'Leistungen',fontsize=12)#
+plt.ylabel(r'\textbf{Leistung (W)}')
+plt.xlabel(r'\textbf{Widerstand}')
+plt.tight_layout()
+plt.savefig(&quot;Diag_Parallelschaltung.svg&quot;)# SVG-Vektorgrafik
+plt.show()
+</code></pre>
+<p><strong>Programmberechnung</strong></p>
+<pre><code class="language-python"># Ausgabe Quellcode:
+Teilstrom über R1, I1 = 1.20 A
+Teilstrom über R2, I2 = 0.60 A
+Teilstrom über R3, I3 = 0.40 A
+Gesamtstrom, I_ges = 2.20 A
+Gesamtleistung, P_ges = 26.40 W
+Leistung über R1, P1 = 14.40 W
+Leistung über R2, P2 = 7.20 W
+Leistung über R3, P3 = 4.80 W
+Gesamtwiderstand, R_ges = 5.45 Ohm
+</code></pre>
+<p><img alt="Parallelschaltung" src="../images/Diag_Parallelschaltung-min.svg" /> </p>
+<!--![Parallelschaltung](images\Diag_Parallelschaltung.eps){width=70%}-->
+
+<pre><code>
+</code></pre>
+<p>\newpage
+<strong>Berechnung</strong></p>
+<p><strong>Gegebene Werte:</strong></p>
+<ul>
+<li>$R_1 = 10~\Omega$</li>
+<li>$R_2 = 20~\Omega$</li>
+<li>$R_3 = 30~\Omega$</li>
+<li>$U = 12~V$</li>
+</ul>
+<p><strong>Gesamtwiderstand der Parallelschaltung:</strong></p>
+<ul>
+<li>
+<p>$\frac{1}{R_{ges}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} = \frac{1}{10} + \frac{1}{20} + \frac{1}{30} = 0.1833$</p>
+</li>
+<li>
+<p>Daraus ergibt sich: $R_{ges} = \frac{1}{0.1833} = 5.46~\Omega$</p>
+</li>
+</ul>
+<p><strong>Teilströme:</strong></p>
+<ul>
+<li>$I_1 = \frac{U}{R_1} = \frac{12}{10} = 1.2~A$</li>
+<li>$I_2 = \frac{U}{R_2} = \frac{12}{20} = 0.6~A$</li>
+<li>$I_3 = \frac{U}{R_3} = \frac{12}{30} = 0.4~A$</li>
+</ul>
+<p><strong>Gesamtstrom:</strong></p>
+<ul>
+<li>$I_{ges} = I_1 + I_2 + I_3 = 1.2 + 0.6 + 0.4 = 2.2~A$</li>
+</ul>
+<p><strong>Leistung über jeden Widerstand:</strong></p>
+<ul>
+<li>$P_1 = U \times I_1 = 12 \times 1.2 = 14.4~W$</li>
+<li>$P_2 = U \times I_2 = 12 \times 0.6 = 7.2~W$</li>
+<li>$P_3 = U \times I_3 = 12 \times 0.4 = 4.8~W$</li>
+</ul>
+<p><strong>Gesamtleistung:</strong></p>
+<ul>
+<li>$P_{ges} = U \times I_{ges} = 12 \times 2.2 = 26.4~W$</li>
+</ul>
+<p><strong>Ergebnisse:</strong></p>
+<ul>
+<li>Gesamtwiderstand, $R_{ges} = 5.46~\Omega$</li>
+<li>Teilstrom über $R_1, I_1 = 1.2~A$</li>
+<li>Teilstrom über $R_2, I_2 = 0.6~A$</li>
+<li>Teilstrom über $R_3, I_3 = 0.4~A$</li>
+<li>Gesamtstrom, $I_{ges} = 2.2~A$</li>
+<li>Leistung über $R_1, P_1 = 14.4~W$</li>
+<li>Leistung über $R_2, P_2 = 7.2~W$</li>
+<li>Leistung über $R_3, P_3 = 4.8~W$</li>
+<li>Gesamtleistung, $P_{ges} = 26.4~W$</li>
+</ul>
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2023
+        </div>
+    </footer> 
+</div>
+    <!--javascript-->
+    <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+    <script>hljs.highlightAll();</script>
+</body></html>

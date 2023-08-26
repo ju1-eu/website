@@ -1,0 +1,54 @@
+% vorlage-design-main.sty
+\ProvidesPackage{vorlage-design-main}[2023/08/06 v1.0.0 Mein Design-Paket für LaTeX-Dokumente]
+
+% --------- Seitenränder und Kopf-/Fußzeile ---------
+\RequirePackage[margin=2cm]{geometry}
+\RequirePackage{lastpage}
+\RequirePackage{scrlayer-scrpage}
+
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\ofoot{Seite \thepage\ von \pageref{LastPage}}
+
+% --------- Typografie und Fonts ---------
+\RequirePackage{ifxetex}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{microtype}
+\RequirePackage[ngerman]{babel}
+\RequirePackage{amsmath, amssymb}
+\RequirePackage{csquotes}
+
+% Abhängig von der verwendeten Compiler-Option, Entscheidung zwischen pdflatex und xelatex
+\ifxetex
+    % Einstellungen für xelatex (falls Sie diese später nutzen möchten)
+    % Fehler Schriftart
+    %RequirePackage{fontspec}
+    %RequirePackage{unicode-math}
+    %\setmainfont{Source Sans Pro}
+    %\setsansfont{Source Sans Pro}
+    %\setmonofont{Source Code Pro}
+    %\setmathfont{STIX Two Math}    
+    %\setmathrm{Source Serif Pro}
+    %\setmathsf{Source Sans Pro}
+    %\setmathtt{Source Code Pro}
+\else
+    % Einstellungen für pdflatex
+    \RequirePackage{sourcesanspro}
+    \RequirePackage[scaled]{sourcecodepro}
+    \RequirePackage{mathpazo}
+\fi
+
+% --------- Bilder, Tabellen und Listen ---------
+\RequirePackage{graphicx}
+\RequirePackage{svg}
+\RequirePackage{tabularx}
+\RequirePackage{listings}
+
+% --------- Zitate und Bibliographie ---------
+\RequirePackage[style=authoryear,backend=biber]{biblatex}
+
+% --------- Hyperlinks und interaktive Elemente ---------
+\RequirePackage{hyperref}
+
+% Weitere Design- und Stileinstellungen

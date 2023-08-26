@@ -1,0 +1,154 @@
+% vorlage-main.tex
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage{vorlage-design-main}% vorlage-design-main.sty
+% Bildgröße global ändern
+\setkeys{Gin}{width=0.75\linewidth}
+% Literatur
+\addbibresource{referenzen.bib}
+% Anpassung des Quellcode-Stils
+\lstset{
+  basicstyle=\ttfamily\small,   % Ändern Sie die Schriftgröße des Quellcodes, falls erforderlich.
+  columns=fullflexible,
+  breaklines=true,              % Zeilenumbrüche für zu lange Zeilen
+  postbreak=\mbox{$\hookrightarrow$\space}, % Pfeil am Zeilenumbruch
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {Ö}{{\"O}}1
+           {Ä}{{\"A}}1
+           {Ü}{{\"U}}1
+           {ß}{{\ss}}1,
+  xleftmargin=2em,              % Optional: Linker Abstand
+  xrightmargin=3em,             % Optional: Rechter Abstand
+  showstringspaces=false,
+  showspaces=false             % Zeigt keine Leerzeichen an
+}
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+% Fehler wenn pandoc - Markdown in Latex
+\newcommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+% Titel, Autor und Datum
+\title{Mein optimiertes Dokument}
+%\author{Jan Unger}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\hypertarget{markdown-zu-html-konverter}{%
+\subsection{Markdown zu HTML
+Konverter}\label{markdown-zu-html-konverter}}
+
+\hypertarget{uxfcberblick}{%
+\subsubsection{Überblick}\label{uxfcberblick}}
+
+Dieses Skript ermöglicht die Konvertierung von Text, der in Markdown
+verfasst wurde, in HTML. Es ist in PHP geschrieben und verwendet die
+{\lstinline!Parsedown!}-Bibliothek, um eine korrekte
+Umsetzung des Markdown-Formats sicherzustellen.
+
+\hypertarget{installation}{%
+\subsubsection{Installation}\label{installation}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Voraussetzungen}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ein Server mit PHP-Unterstützung.
+  \item
+    \href{https://getcomposer.org/}{Composer}, ein Werkzeug für die
+    Abhängigkeitsverwaltung in PHP.
+  \end{itemize}
+\item
+  \textbf{Bibliothek installieren} Nach der Installation von Composer
+  führt man den folgenden Befehl im Hauptverzeichnis des Projekts aus:
+
+\begin{lstlisting}[language=bash]
+# Terminal
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+mkdir -p /usr/local/bin
+mv composer.phar /usr/local/bin/composer
+composer
+composer require erusev/parsedown
+\end{lstlisting}
+
+  Dies wird die {\lstinline!Parsedown!}-Bibliothek in das
+  Projekt herunterladen und installieren.
+\item
+  \textbf{Skript bereitstellen} Das zuvor bereitgestellte PHP-Skript
+  kann in einem geeigneten Verzeichnis auf dem Server abgelegt werden.
+\end{enumerate}
+
+\hypertarget{scriptaufruf}{%
+\subsubsection{Scriptaufruf}\label{scriptaufruf}}
+
+Nachdem alles installiert wurde, kann man das Skript über einen
+Webbrowser aufrufen, indem man die entsprechende URL in die Adressleiste
+des Browsers eingibt. Zum Beispiel:
+
+\begin{lstlisting}
+http://meinedomain.de/pfad/zum/script.php
+\end{lstlisting}
+
+\hypertarget{funktionsweise}{%
+\subsubsection{Funktionsweise}\label{funktionsweise}}
+
+Nach dem Aufrufen des Skripts im Browser sieht man ein Formularfeld, in
+das Markdown-Text eingegeben werden kann. Nachdem der Text eingegeben
+und das Formular abgeschickt wurde, zeigt das Skript den eingegebenen
+Markdown-Text als HTML formatiert an.
+
+\hypertarget{testergebnisse}{%
+\subsubsection{Testergebnisse}\label{testergebnisse}}
+
+Das Skript wurde mit verschiedenen Markdown-Eingaben getestet,
+einschließlich, aber nicht beschränkt auf:
+
+\begin{itemize}
+\tightlist
+\item
+  Überschriften
+\item
+  Listen (sowohl geordnet als auch ungeordnet)
+\item
+  Links
+\item
+  Bilder
+\item
+  Textformatierungen wie \textbf{Fett}, \emph{Kursiv} und
+  {\lstinline!Code!}.
+\end{itemize}
+
+In allen Testszenarien wurde der Markdown-Text korrekt in HTML
+umgewandelt und angezeigt.
+
+\hypertarget{sicherheitshinweis}{%
+\subsubsection{Sicherheitshinweis}\label{sicherheitshinweis}}
+
+Das Skript verwendet {\lstinline!htmlspecialchars!} zur
+Behandlung von Benutzereingaben, um Cross-Site-Scripting-Attacken (XSS)
+zu verhindern. Es ist jedoch immer ratsam, weitere sicherheitsrelevante
+Aspekte im Auge zu behalten und das Skript regelmäßig auf
+Sicherheitslücken zu überprüfen, insbesondere wenn es in einer
+Produktionsumgebung eingesetzt wird.
+
+\hypertarget{schlussfolgerung}{%
+\subsubsection{Schlussfolgerung}\label{schlussfolgerung}}
+
+Das bereitgestellte Skript ist ein nützliches Werkzeug, um Markdown
+schnell und einfach in HTML umzuwandeln. Es bietet eine einfache
+Benutzeroberfläche und zuverlässige
+Konvertierungsfunktionen. % Platzhalter
+
+\end{document}

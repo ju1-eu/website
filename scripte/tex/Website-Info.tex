@@ -1,0 +1,934 @@
+% vorlage-main.tex
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage{vorlage-design-main}% vorlage-design-main.sty
+% Bildgröße global ändern
+\setkeys{Gin}{width=0.75\linewidth}
+% Literatur
+\addbibresource{referenzen.bib}
+% Anpassung des Quellcode-Stils
+\lstset{
+  basicstyle=\ttfamily\small,   % Ändern Sie die Schriftgröße des Quellcodes, falls erforderlich.
+  columns=fullflexible,
+  breaklines=true,              % Zeilenumbrüche für zu lange Zeilen
+  postbreak=\mbox{$\hookrightarrow$\space}, % Pfeil am Zeilenumbruch
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {Ö}{{\"O}}1
+           {Ä}{{\"A}}1
+           {Ü}{{\"U}}1
+           {ß}{{\ss}}1,
+  xleftmargin=2em,              % Optional: Linker Abstand
+  xrightmargin=3em,             % Optional: Rechter Abstand
+  showstringspaces=false,
+  showspaces=false             % Zeigt keine Leerzeichen an
+}
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+% Fehler wenn pandoc - Markdown in Latex
+\newcommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+% Titel, Autor und Datum
+\title{Mein optimiertes Dokument}
+%\author{Jan Unger}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\hypertarget{website-info}{%
+\section{Website-Info}\label{website-info}}
+
+ChatGPT \url{https://chat.openai.com/}
+
+\hypertarget{erstelle-und-strukturiere-mir-webseiteninhalte}{%
+\subsection{Erstelle und Strukturiere mir
+Webseiteninhalte}\label{erstelle-und-strukturiere-mir-webseiteninhalte}}
+
+\textbf{Aufgabenstellung 1: Erstelle und Strukturiere mir
+Webseiteninhalte}
+
+Ziel dieser Aufgabe ist die Erstellung und Strukturierung von Dateien
+für eine Website gemäß den angegebenen Spezifikationen.
+
+\textbf{Anforderungen:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Root-Ordner (Hauptverzeichnis):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Erstellen Sie eine {\lstinline!index.html!} im
+    Root-Ordner der Webseite.
+  \end{itemize}
+\item
+  \textbf{CSS-Ordner:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Erstellen Sie eine CSS-Datei im Ordner
+    {\lstinline!css!}. Die genaue Bezeichnung der Datei kann
+    frei gewählt werden, sollte jedoch beschreibend sein, z.B.
+    {\lstinline!main.css!}.
+  \end{itemize}
+\item
+  \textbf{Bilder-Ordner:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Platzieren Sie einen Bildplatzhalter im Ordner
+    {\lstinline!img!}. Dies kann ein Standardbild sein, das
+    später durch ein tatsächliches Bild ersetzt wird.
+  \end{itemize}
+\item
+  \textbf{PHP-Ordner:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Erstellen Sie eine PHP-Datei im Ordner
+    {\lstinline!php!}. Der Name der Datei sollte den Inhalt
+    oder den Zweck der Datei widerspiegeln.
+  \end{itemize}
+\item
+  \textbf{HTML-Ordner:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Erstellen Sie eine zusätzliche HTML-Datei im Ordner
+    {\lstinline!html!}. Die Bezeichnung dieser Datei kann
+    frei gewählt werden, sollte jedoch den Inhalt oder Zweck der Datei
+    deutlich machen.
+  \end{itemize}
+\end{enumerate}
+
+\textbf{Hinweise:} - Achten Sie auf eine klare und saubere
+Strukturierung der Dateien und Ordner. - Beachten Sie die Best Practices
+bei der Benennung von Dateien und Ordnern, um Verwirrung oder Konflikte
+zu vermeiden.
+
+\textbf{Abgabe:} - Ein Zip-Archiv oder einen Link zu einem Repository,
+das alle erstellten Dateien und Ordner enthält. - Ein kurzer Bericht
+(optional), in dem die Struktur und der Zweck jeder Datei beschrieben
+wird.
+
+\textbf{Deadline:} - Abgabedatum: 1.9.2023
+
+\textbf{Bewertungskriterien:} - die Qualität des Codes, die Einhaltung
+der Best Practices und die Ästhetik des Designs.
+
+\hypertarget{uxfcberpruxfcfe-und-optimiere-die-webseiteninhalte}{%
+\subsubsection{Überprüfe und Optimiere die
+Webseiteninhalte}\label{uxfcberpruxfcfe-und-optimiere-die-webseiteninhalte}}
+
+\textbf{Aufgabenstellung 2: Überprüfe und Optimiere die
+Webseiteninhalte}
+
+Ziel dieser Aufgabe ist die Analyse und Optimierung von Webinhalten, um
+eine bestmögliche Benutzererfahrung über verschiedene Geräte hinweg
+sicherzustellen.
+
+\textbf{Anforderungen:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Best Practices für html, CSS und php:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Untersuchen Sie das aktuelle CSS und vergewissern Sie sich, dass es
+    den gängigen Best Practices entspricht.
+  \end{itemize}
+\item
+  \textbf{Barrierefreiheit:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Stellen Sie sicher, dass die Webseite für alle Benutzer zugänglich
+    ist, einschließlich Menschen mit Behinderungen.
+  \end{itemize}
+\item
+  \textbf{Responsive Design:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Die Webseite sollte auf unterschiedlichen Geräten - von
+    Mobiltelefonen über Tablets bis hin zu Desktop-Computern - gut
+    lesbar und nutzbar sein.
+  \end{itemize}
+\item
+  \textbf{Einheitlichkeit der Maßeinheiten:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Verwenden Sie, wo immer möglich, die Maßeinheit ``em'' in Ihrem CSS,
+    um Skalierbarkeit und Flexibilität über verschiedene Geräte und
+    Bildschirmgrößen hinweg sicherzustellen.
+  \end{itemize}
+\item
+  \textbf{Ziel-Dateien:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Die Überprüfung und Anpassungen sollten sich auf ``Index.html''
+    sowie die zugehörigen PHP-Seiten erstrecken.
+  \end{itemize}
+\end{enumerate}
+
+\textbf{Abgabe:} - Überarbeitetes CSS-Dokument - Überarbeitete
+index.html und PHP-Dateien, falls notwendig - Ein kurzer Bericht über
+die vorgenommenen Änderungen und deren Auswirkungen auf die
+Benutzererfahrung.
+
+\hypertarget{kontrolliere-nochmals}{%
+\subsubsection{Kontrolliere nochmals}\label{kontrolliere-nochmals}}
+
+\begin{lstlisting}[language=bash]
+# ChatGPT
+Nehmen Sie die Rolle eines erfahrenen Webprogrammierer und Webdesigner ein.
+
+Aufgabe: Kontrolliere nochmals unter Berücksichtigung von
+
+- Best Practices  
+- Barrierefreiheit
+- Responsive Design: gute Lesbarkeit auf Handy, Tablett und große Bildschirme
+- Text soll vertikal zentriert und im Blickfeld des Betrachters sein
+- Maßeinheiten in em
+- Native Lazy Loading (für moderne Browser)
+- Performance
+
+Datei = " "
+
+für index.html, html und php, css
+\end{lstlisting}
+
+\hypertarget{css-optimieren}{%
+\subsubsection{CSS optimieren}\label{css-optimieren}}
+
+\begin{lstlisting}[language=bash]
+# ChatGPT
+optimiere meine CSS und Vermeide teure CSS-Selektoren 
+
+- Zusammenfassung von Wiederholungen
+- Vermeidung von spezifischen Kombinationen:
+- Optimierung der Media Queries: 
+
+datei = " "
+\end{lstlisting}
+
+\hypertarget{schreibstile}{%
+\subsection{Schreibstile}\label{schreibstile}}
+
+\begin{lstlisting}[language=bash]
+# ChatGPT
+# Favorit: Expositorisch
+# Schreibstile: Beschreibend, Expositorisch, Reflektierend, Akademisch, Kritisch
+Schreibstil: Expositorisch
+Erstellen Sie je nach Schreibstil eine kurze (ca. 35 Wörter) und ansprechende Zusammenfassung des folgenden Artikels. Die Zusammenfassung sollte für jemanden ohne wissenschaftlichen Hintergrund verständlich sein und gleichzeitig die wichtigsten Informationen genau wiedergeben. 
+Artikel: " "
+\end{lstlisting}
+
+\hypertarget{html-grundgeruxfcsts}{%
+\subsection{HTML-Grundgerüsts}\label{html-grundgeruxfcsts}}
+
+\textbf{1. Best Practices:}
+
+\begin{itemize}
+\tightlist
+\item
+  Das DOCTYPE-Element ist korrekt am Anfang des Dokuments angegeben.
+\item
+  Das {\lstinline!lang!}-Attribut im
+  {\lstinline!<html>!}-Tag ist gesetzt und zeigt an, dass
+  der Inhalt auf Deutsch ist.
+\item
+  Es gibt eine klare Trennung von Struktur (HTML) und Stil (CSS).
+\item
+  Es wird ein verständlicher und barrierefreier Alternativtext für
+  Bilder verwendet.
+\end{itemize}
+
+\textbf{2. Barrierefreiheit:}
+
+\begin{itemize}
+\tightlist
+\item
+  Semantische HTML-Tags wie {\lstinline!<header>!},
+  {\lstinline!<nav>!}, {\lstinline!<main>!} und
+  {\lstinline!<footer>!} werden verwendet, um den Inhalt zu
+  strukturieren.
+\item
+  Es werden Rollen wie {\lstinline!role="banner"!},
+  {\lstinline!role="navigation"!},
+  {\lstinline!role="main"!}, und
+  {\lstinline!role="contentinfo"!} verwendet, um die
+  Semantik weiter zu erhöhen.
+\item
+  Es gibt einen Alternativtext für das Bild, der seine Bedeutung oder
+  Funktion beschreibt.
+\end{itemize}
+
+\textbf{3. Responsive Design:}
+
+\begin{itemize}
+\tightlist
+\item
+  Der Meta-Viewport-Tag
+  {\lstinline!<meta name="viewport" content="width=device-width, initial-scale=1.0">!}
+  ist vorhanden und sorgt dafür, dass die Seite korrekt auf
+  verschiedenen Bildschirmgrößen skaliert.
+\item
+  Für eine vollständige Überprüfung des responsiven Designs müssten wir
+  den CSS-Code betrachten und die Webseite in verschiedenen
+  Bildschirmgrößen testen. Es ist wichtig, dass das Layout der Webseite
+  sich anpasst und der Inhalt auf verschiedenen Geräten gut lesbar
+  bleibt.
+\end{itemize}
+
+\textbf{4. Maßeinheiten in {\lstinline!em!}:}
+
+\begin{itemize}
+\tightlist
+\item
+  Der bereitgestellte HTML-Code verwendet keine direkten Stilangaben,
+  daher müssen alle Größen- und Abstandsangaben im CSS in
+  {\lstinline!em!}-Einheiten gemacht werden.
+\end{itemize}
+
+\textbf{Was noch zu tun ist:}
+
+\begin{itemize}
+\tightlist
+\item
+  Testen Sie die Webseite mit einem Screenreader oder
+  Barrierefreiheits-Tool, um sicherzustellen, dass sie für alle Benutzer
+  zugänglich ist.
+\item
+  Überprüfen Sie alle anderen HTML- und PHP-Seiten mit den gleichen
+  Kriterien.
+\item
+  Stellen Sie sicher, dass alle externen Ressourcen (Bilder, Skripte,
+  Stylesheets) korrekt geladen werden und keine gebrochenen Links
+  vorhanden sind.
+\item
+  Das CSS sollte regelmäßig überprüft werden, um sicherzustellen, dass
+  es den Best Practices entspricht und effizient ist.
+\end{itemize}
+
+Es wäre auch hilfreich, regelmäßige Tests mit echten Benutzern
+durchzuführen, um Feedback zu Design, Usability und Barrierefreiheit zu
+erhalten. Dies wird Ihnen helfen, Bereiche zu identifizieren, die weiter
+optimiert werden müssen.
+
+\hypertarget{performance-einer-website-zu-verbessern}{%
+\subsection{Performance einer Website zu
+verbessern}\label{performance-einer-website-zu-verbessern}}
+
+Die Performance einer Website zu verbessern, kann das Benutzererlebnis
+erheblich steigern und sich positiv auf die SEO auswirken.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Bilder optimieren:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Verwende Formate wie WebP, das oft kleinere Dateigrößen als PNG oder
+    JPEG bietet.
+  \item
+    Komprimiere Bilder, ohne die Qualität wesentlich zu beeinträchtigen.
+  \item
+    Nutze Responsive Images mit dem {\lstinline!srcset!}
+    Attribut, um verschiedene Bildgrößen für verschiedene
+    Bildschirmauflösungen bereitzustellen.
+  \end{itemize}
+\item
+  \textbf{Minimieren und kombinieren von Dateien:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Minimiere CSS, JavaScript und HTML.
+  \item
+    Kombiniere mehrere CSS- oder JS-Dateien in eine einzelne Datei, um
+    HTTP-Anfragen zu reduzieren.
+  \end{itemize}
+\item
+  \textbf{Verwende Lazy Loading:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Lade Bilder, Videos und Iframes erst, wenn sie im Viewport des
+    Benutzers erscheinen.
+  \end{itemize}
+\item
+  \textbf{Browser-Caching nutzen:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Durch das Festlegen von Ablaufzeiten für Ressourcen können
+    wiederkehrende Besucher Inhalte aus ihrem Browser-Cache laden.
+  \end{itemize}
+\item
+  \textbf{Verwende Content Delivery Networks (CDNs):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ein CDN kann Inhalte schneller an Benutzer weltweit liefern, indem
+    es Kopien deiner Ressourcen auf mehreren Servern verteilt.
+  \end{itemize}
+\item
+  \textbf{Optimiere die Reihenfolge der Ressourcen:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Lade kritischen CSS und JS zuerst und verschiebe nicht-kritische
+    JS-Ressourcen mit dem {\lstinline!defer!} Attribut.
+  \end{itemize}
+\item
+  \textbf{Verringere Serverantwortzeit:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Betrachte Hosting-Optionen und optimiere Backend-Code. Ein
+    effizientes Webhosting und ein optimierter Server können die
+    Antwortzeit verbessern.
+  \end{itemize}
+\item
+  \textbf{Verwende HTTP/3 oder HTTP/2:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Diese neueren Protokolle bieten Verbesserungen gegenüber HTTP/1.1,
+    wie z.B. das Multiplexing von Anfragen.
+  \end{itemize}
+\item
+  \textbf{Reduziere externe Ressourcen und Plugins:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Jede externe Ressource (z.B. Schriftarten, Widgets, Plugins) kann
+    die Ladezeit erhöhen.
+  \end{itemize}
+\item
+  \textbf{Optimiere CSS und JavaScript:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Vermeide teure CSS-Selektoren und reduziere die Tiefe von
+    JavaScript-Aufrufen.
+  \end{itemize}
+\item
+  \textbf{Nutze serverseitige Kompression:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Verwende Gzip oder Brotli, um Dateigrößen vor dem Senden an den
+    Client zu verringern.
+  \end{itemize}
+\item
+  \textbf{Verbessere die Datenbankleistung:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Optimiere Abfragen, setze Indizes ein und überlege, einen Cache wie
+    Redis oder Memcached zu verwenden.
+  \end{itemize}
+\item
+  \textbf{Mobile Optimierung:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Stelle sicher, dass deine Website für mobile Geräte optimiert ist,
+    da immer mehr Nutzer über Mobilgeräte zugreifen.
+  \end{itemize}
+\item
+  \textbf{Überwache und messe regelmäßig:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Verwende Tools wie Google PageSpeed Insights, GTmetrix oder
+    WebPageTest, um die Performance deiner Website regelmäßig zu
+    überprüfen.
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{links}{%
+\subsection{Links}\label{links}}
+
+\begin{itemize}
+\item
+  SVG \url{https://svgoptimizer.com/de/}
+\item
+  MOV to MP4/WEBM Converter \url{https://cloudconvert.com/mov-to-webm}
+\item
+  XAMPP Apache + MariaDB + PHP
+  \url{https://www.apachefriends.org/de/index.html}
+\end{itemize}
+
+\hypertarget{webdesign}{%
+\subsection{Webdesign}\label{webdesign}}
+
+\begin{itemize}
+\item
+  Download-Link für eine PDF-Datei
+\item
+  Footer und die Bilder mittig positionieren und den Bildnamen
+  anzuzeigen
+\item
+  Darstellung der HTML {\lstinline!<pre><code>!} Umgebung
+  anpassen, Quellcode linksbündig darstellen und breite Texte mit
+  Zeilenumbrüchen und Einrückungen versehen
+\item
+  Hover- und Fokus-Stil für Links und Bilder, Bilder nebeneinander
+  anordnen, Bildgöße
+\item
+  CSS-Anweisungen optimieren und CSS-Variablen verwenden, um den Code
+  sauberer und wartbarer zu machen
+\item
+  Roboto-Font aus Google Fonts
+\item
+  Inhalt sowohl horizontal als auch vertikal zu zentrieren und sich
+  dabei am oberen Rand des Ansichtsfensters zu befinden
+\end{itemize}
+
+Browser-Caching ist ein effektives Mittel, um die Ladegeschwindigkeit
+einer Website zu verbessern.
+
+\begin{lstlisting}[language=bash]
+# .htaccess-Datei für Apache-Server:
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+\end{lstlisting}
+
+E-Tag (Entity Tag) ist ein Teil des HTTP-Protokolls, das von Webservern
+und Browsern verwendet wird, um die Gültigkeit einer bestimmten Version
+einer Ressource zu überprüfen.
+
+\begin{lstlisting}[language=bash]
+# .htaccess-Datei für Apache-Server:
+FileETag MTime Size
+\end{lstlisting}
+
+\hypertarget{webdesign-merkmale-von-spiegel}{%
+\subsection{Webdesign-Merkmale von
+Spiegel}\label{webdesign-merkmale-von-spiegel}}
+
+Die Website von ``spiegel.de'' ist die Online-Ausgabe von Deutschlands
+bekanntem Nachrichtenmagazin, dem SPIEGEL. Wie bei vielen
+Nachrichtenportalen, weist sie bestimmte Design- und Funktionsmerkmale
+auf, um den Inhalt klar und ansprechend zu präsentieren. Hier sind
+einige charakteristische Webdesign-Merkmale, die man auf solchen großen
+Nachrichtenportalen häufig findet:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Responsives Design}: Die Website ist so gestaltet, dass sie
+  auf verschiedenen Geräten -- von Mobiltelefonen über Tablets bis hin
+  zu Desktops -- gut aussieht und funktioniert.
+\item
+  \textbf{Header mit Branding}: Oft gibt es ein prominent platziertes
+  Logo und Navigationsmenü am oberen Rand der Seite.
+\item
+  \textbf{Mehrspaltiges Layout}: Auf der Startseite und in den
+  Kategorieseiten finden sich oft mehrere Spalten mit verschiedenen
+  Nachrichtenkategorien oder Schlagzeilen.
+\item
+  \textbf{Bilder und Multimedia}: Große, auffällige Bilder und
+  eingebettete Videos sind häufig zu finden, um Geschichten zu ergänzen
+  und die Aufmerksamkeit der Leser zu fesseln.
+\item
+  \textbf{Inhaltskarten}: Artikel können in ``Karten'' dargestellt
+  werden, die einen Titel, ein Bild und vielleicht eine kurze
+  Beschreibung enthalten.
+\item
+  \textbf{Scrollbare Inhalte}: Besonders auf der Startseite gibt es oft
+  unendliches Scrollen oder ``Lazy Loading'', bei dem neue Inhalte
+  geladen werden, wenn der Benutzer zum Ende der Seite scrollt.
+\item
+  \textbf{Footer-Bereich}: Hier finden sich oft Links zu Impressum,
+  Datenschutzerklärung, Kontaktinformationen und anderen wichtigen
+  Seiten.
+\item
+  \textbf{Interaktive Elemente}: Dazu gehören Dropdown-Menüs,
+  Suchfelder, Buttons für soziale Medien und mehr.
+\item
+  \textbf{Werbung}: Große Nachrichtenseiten haben oft Display-Werbung in
+  verschiedenen Formaten und Größen.
+\item
+  \textbf{Dunkler Modus}: Einige moderne Websites, einschließlich
+  Nachrichtenportalen, bieten einen ``dunklen Modus'' an, der besonders
+  in Umgebungen mit wenig Licht angenehm für die Augen ist.
+\item
+  \textbf{Eingebettete Widgets}: Dazu können Live-Ticker, Umfragen oder
+  interaktive Grafiken gehören.
+\end{enumerate}
+
+Es ist wichtig zu beachten, dass die spezifischen Designentscheidungen,
+die für ``spiegel.de'' getroffen wurden, auf einer Vielzahl von Faktoren
+basieren, einschließlich Markenidentität, Benutzererfahrung und
+Geschäftszielen. Wenn Sie das Design einer bestimmten Website nachahmen
+oder sich davon inspirieren lassen möchten, ist es ratsam, diese
+Faktoren zu berücksichtigen und sicherzustellen, dass Ihr Design den
+Bedürfnissen und Erwartungen Ihrer Zielgruppe entspricht.
+
+\hypertarget{schreibstile-1}{%
+\subsection{Schreibstile}\label{schreibstile-1}}
+
+\begin{lstlisting}[language=bash]
+# Favorit: Expositorisch
+# Schreibstile: Beschreibend, Expositorisch, Reflektierend, Akademisch, Kritisch
+Schreibstil: Expositorisch
+Erstellen Sie je nach Schreibstil eine kurze (ca. 35 Wörter) und ansprechende Zusammenfassung des folgenden Artikels. Die Zusammenfassung sollte für jemanden ohne wissenschaftlichen Hintergrund verständlich sein und gleichzeitig die wichtigsten Informationen genau wiedergeben. 
+Artikel: " "
+\end{lstlisting}
+
+Es gibt zahlreiche Schreibstile, die je nach Kontext, Zweck und Publikum
+variieren können. Hier sind einige der gängigsten Schreibstile:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Erzählerisch (narrativ):} Dieser Stil erzählt eine Geschichte,
+  sei es Fiktion oder Non-Fiktion.
+\item
+  \textbf{Beschreibend:} Hierbei wird der Fokus auf detaillierte
+  Beschreibungen gelegt, um ein Bild oder ein Gefühl für den Leser zu
+  erzeugen.
+\item
+  \textbf{Überzeugend (argumentativ):} Der Zweck ist es, den Leser von
+  einer bestimmten Meinung, Idee oder Perspektive zu überzeugen.
+\item
+  \textbf{Expositorisch:} Dieser Stil informiert oder erläutert ein
+  Thema. Er wird oft in akademischen und journalistischen Kontexten
+  verwendet.
+\item
+  \textbf{Reflektierend:} Hier reflektiert der Autor über persönliche
+  Erfahrungen und Erlebnisse, oft in einem Tagebuch oder in persönlichen
+  Essays.
+\item
+  \textbf{Direktiv (imperativ):} Dieser Stil gibt Anweisungen oder
+  Anordnungen, wie in Kochrezepten oder Bedienungsanleitungen.
+\item
+  \textbf{Lyrisch:} Hierbei handelt es sich um einen poetischen
+  Schreibstil, der oft in Gedichten, Liedtexten und manchmal in Prosa
+  vorkommt.
+\item
+  \textbf{Kritisch:} Analyse und Bewertung eines Themas oder Werkes, oft
+  in Buchkritiken oder Filmrezensionen.
+\item
+  \textbf{Journalistisch:} Hierbei geht es um das objektive Berichten
+  von Nachrichten und aktuellen Ereignissen.
+\item
+  \textbf{Akademisch:} Ein formeller Stil, der in wissenschaftlichen
+  Arbeiten, Aufsätzen und Forschungsartikeln verwendet wird.
+\item
+  \textbf{Dialogisch:} Dieser Stil betont den Dialog zwischen
+  Charakteren oder zwischen Autor und Leser.
+\item
+  \textbf{Satirisch:} Ein humorvoller oder ironischer Stil, der oft dazu
+  verwendet wird, Kritik zu üben oder auf Probleme aufmerksam zu machen.
+\item
+  \textbf{Epistolisch:} Ein Stil, der in Briefen oder Korrespondenzen
+  verwendet wird.
+\end{enumerate}
+
+Es ist wichtig zu beachten, dass viele Texte oft eine Kombination aus
+verschiedenen Stilen enthalten können, je nach Bedarf und Kontext des
+Schreibens.
+
+\hypertarget{bewertung-von-html-datei-und-css-code}{%
+\section{Bewertung von HTML-Datei und
+CSS-Code}\label{bewertung-von-html-datei-und-css-code}}
+
+\textbf{HTML-Datei}
+
+Unter Berücksichtigung Ihrer Anforderungen und basierend auf der
+bereitgestellten HTML-Datei sind hier einige Anmerkungen und
+Verbesserungen, um eine effektive, barrierefreie und responsive Webseite
+zu erstellen:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Best Practices:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie haben bereits das HTML5 DOCTYPE, die charset Deklaration, und
+    Meta-Viewport-Tags, das ist großartig.
+  \end{itemize}
+\item
+  \textbf{Barrierefreiheit:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Die Verwendung von {\lstinline!role!} Attributen ist
+    gut, diese können in einigen Fällen jedoch redundant sein, da
+    HTML5-Elemente wie {\lstinline!<header>!},
+    {\lstinline!<nav>!}, {\lstinline!<main>!}
+    und {\lstinline!<footer>!} bereits diese semantischen
+    Rollen implizieren.
+  \item
+    Stellen Sie sicher, dass der Kontrast zwischen Text- und
+    Hintergrundfarben ausreichend ist.
+  \item
+    Verwenden Sie ARIA-Attribute sparsam und nur dann, wenn sie
+    notwendig sind.
+  \item
+    Es wäre auch gut, wenn Sie andere semantische HTML-Elemente wie
+    {\lstinline!<article>!},
+    {\lstinline!<section>!} oder
+    {\lstinline!<aside>!} verwenden würden, wo es sinnvoll
+    ist.
+  \end{itemize}
+\item
+  \textbf{Responsive Design:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie haben den Meta-Viewport-Tag verwendet, das ist sehr wichtig für
+    ein Responsive Design. Der CSS-Code, den Sie zuvor bereitgestellt
+    haben, enthält bereits Media-Queries für verschiedene
+    Bildschirmgrößen.
+  \end{itemize}
+\item
+  \textbf{Text vertikal zentrieren:}
+
+  \begin{itemize}
+  \item
+    Sie können Flexbox oder Grid verwenden, um den Inhalt innerhalb von
+    {\lstinline!.container!} vertikal zu zentrieren. Hier
+    ist eine Möglichkeit mit Flexbox:
+  \item
+\begin{lstlisting}
+.container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100vh; /* Mindestens die Höhe des Viewports */
+}
+\end{lstlisting}
+  \end{itemize}
+\item
+  \textbf{Maßeinheiten in em:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Die Verwendung von {\lstinline!em!} für Ihre
+    Maßeinheiten ist bereits in Ihrem CSS umgesetzt.
+  \end{itemize}
+\item
+  \textbf{Native Lazy Loading:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Wenn Sie Bilder hinzufügen, können Sie das
+    {\lstinline!loading="lazy"!} Attribut verwenden, um
+    native Lazy Loading zu aktivieren. Zum Beispiel:
+  \item
+    {\lstinline!<img src="path-to-image.jpg" alt="Beschreibung des Bildes" loading="lazy">!}
+  \end{itemize}
+\item
+  \textbf{Performance:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Verkleinern und komprimieren Sie Ihre CSS- und JS-Dateien.
+  \item
+    Überlegen Sie, ob Sie ein Tool wie
+    \href{https://developers.google.com/web/tools/lighthouse}{Lighthouse}
+    verwenden möchten, um Ihre Seite auf Performance-Probleme zu
+    überprüfen.
+  \item
+    Optimieren Sie Bilder für das Web.
+  \item
+    Sie könnten auch in Erwägung ziehen, eine Content Delivery Network
+    (CDN) zu verwenden, um Ihre Webseite schneller zu laden.
+  \end{itemize}
+\end{enumerate}
+
+Abschließend sieht Ihr HTML-Grundgerüst schon recht solide aus. Sie
+sollten jedoch weiterhin Tools wie den
+\href{https://wave.webaim.org/}{WAVE Accessibility Tool} oder
+\href{https://developers.google.com/web/tools/lighthouse}{Lighthouse}
+verwenden, um sicherzustellen, dass Ihre Webseite sowohl barrierefrei
+als auch leistungsstark ist.
+
+\textbf{CSS-Code}
+
+Ihr CSS-Code scheint gut strukturiert und durchdacht zu sein. Es sind
+viele Best Practices implementiert. Hier sind jedoch einige Anmerkungen
+und Optimierungen, die Sie berücksichtigen könnten:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Best Practices:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie verwenden CSS-Variablen, was ein ausgezeichneter Ansatz ist, um
+    den Code wartbarer zu machen.
+  \item
+    Sie haben die Schatten, Farben und Schriftarten zentralisiert, was
+    eine konsistente Gestaltung erleichtert.
+  \end{itemize}
+\item
+  \textbf{Barrierefreiheit:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie haben einen Fokus-Stil für Links hinzugefügt, was gut für die
+    Barrierefreiheit ist. Es könnte hilfreich sein, auch Fokus-Stile für
+    andere interaktive Elemente hinzuzufügen.
+  \end{itemize}
+\item
+  \textbf{Responsive Design:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ihre Medienabfragen sehen solide aus, und Sie haben verschiedene
+    Stile für verschiedene Bildschirmgrößen definiert.
+  \end{itemize}
+\item
+  \textbf{Vertikale Zentrierung:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie haben das {\lstinline!display: flex!} verwendet,
+    aber Sie haben nicht wirklich das vertikale Zentrieren von Text in
+    Containern implementiert. Sie können dies durch die Verwendung von
+    {\lstinline!align-items: center!} in flex-Containern
+    erreichen.
+  \end{itemize}
+\item
+  \textbf{Maßeinheiten in em:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie haben {\lstinline!em!}-Einheiten konsequent
+    verwendet, was gut ist. Beachten Sie jedoch, dass die
+    Basis-Schriftgröße ({\lstinline!--base-font-size!}) in
+    {\lstinline!px!} definiert ist. Wenn Sie die volle
+    Flexibilität von {\lstinline!em!} nutzen möchten,
+    könnten Sie die Basis-Schriftgröße in {\lstinline!rem!}
+    oder {\lstinline!\%!} definieren.
+  \end{itemize}
+\item
+  \textbf{Native Lazy Loading:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie haben keine direkte Implementierung von Lazy Loading für Bilder.
+    Um native Lazy Loading zu implementieren, fügen Sie
+    {\lstinline!loading="lazy"!} zum
+    {\lstinline!img!}-Tag hinzu:
+  \item
+    {\lstinline!<img src="path/to/image.jpg" alt="Beschreibung" loading="lazy">!}
+  \end{itemize}
+\item
+  \textbf{Performance:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sie haben Schatten und Übergänge verwendet, die die Performance
+    beeinflussen könnten, besonders auf mobilen Geräten. Es ist jedoch
+    schwer zu sagen, ohne die gesamte Seite in Aktion zu sehen. Tools
+    wie
+    \href{https://developers.google.com/speed/pagespeed/insights/}{Google
+    PageSpeed Insights} können hilfreich sein, um dies zu überprüfen.
+  \item
+    Achten Sie darauf, externe Schriftarten (wie Roboto) effizient zu
+    laden, um die Webseiten-Performance nicht zu beeinträchtigen.
+  \end{itemize}
+\item
+  \textbf{Sonstige Anmerkungen:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Die {\lstinline!.responsive-video!} Klasse ist
+    definiert, aber es fehlen Stile, die sie wirklich responsiv machen.
+    Sie könnten einen Wrapper mit einem festen Verhältnis verwenden und
+    das Video darin absolut positionieren, um es responsiv zu machen.
+  \item
+    Die {\lstinline!--responsive-img-max-width!} Variable
+    wird im CSS nicht verwendet. Wenn Sie diese Variable für die
+    maximale Breite von Bildern verwenden möchten, stellen Sie sicher,
+    dass sie in Ihrem Code implementiert ist.
+  \item
+    Achten Sie darauf, dass Sie Alt-Texte für alle Bilder verwenden, um
+    die Barrierefreiheit und SEO zu verbessern.
+  \end{itemize}
+\end{enumerate}
+
+Insgesamt haben Sie bereits einen guten Ansatz gewählt, aber wie bei
+allem im Webdesign gibt es immer Raum für Verbesserungen und
+Anpassungen, abhängig von den spezifischen Anforderungen und Zielen
+Ihrer Webseite. % Platzhalter
+
+\end{document}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite rund um das Thema Responsive Design...">
+    <title>Inhaltskarten</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body><div class="container">
+    <header role="banner">
+        <h1>Inhaltskarten</h1>
+        <img src="../images/Logo-min.svg" alt="Website Logo" id="header-logo">
+    </header>
+    <nav role="navigation" aria-label="Hauptnavigation">
+        <!-- Ihre Links -->
+        <a href="../index.html" class="nav-link">Start</a>
+    </nav>
+    <main role="main">
+<div class="card-container">
+    <a href="Ohmsche_Gesetz.html" class="card-link">
+        <div class="card">
+            <div class="card-header">
+                <img src="../images/Diag_Ohmsche_Gesetz.svg" width="300em" alt="Bildbeschreibung" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2>Ohmsche Gesetz</h2>
+                <p>Der Artikel visualisiert das Ohm'sche Gesetz mittels einer Python-Simulation. Anhand von drei unterschiedlichen Widerstandswerten (1, 2 und 3 Ohm) zeigt die Grafik, wie sich Strom und Spannung proportional zueinander verhalten.</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="belasteter_Spannungsteiler.html" class="card-link">
+        <div class="card">
+            <div class="card-header">
+                <img src="../images/Diag_belasteter_Spannungsteiler.svg" width="500em" alt="Bildbeschreibung" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2>belasteter Spannungsteiler</h2>
+                <p>Der Artikel erklärt, wie ein belasteter Spannungsteiler funktioniert und wie die Ströme und Widerstandswerte mit verschiedenen Lastströmen variieren. Python-Code und Grafiken zeigen die Ergebnisse klar.</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="card-container">
+    <a href="Parallelschaltung.html" class="card-link">
+        <div class="card">
+            <div class="card-header">
+                <img src="../images/Diag_Parallelschaltung.svg" width="300em" alt="Bildbeschreibung" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2>Parallelschaltung</h2>
+                <p>Der Artikel behandelt die elektrischen Eigenschaften von Parallelschaltungen. Mit einem Python-Programm werden für drei Widerstände die Teilströme, Gesamtstrom, Leistungen und Gesamtwiderstand berechnet und grafisch dargestellt. Eine manuelle Berechnung klärt die zugrunde liegenden Konzepte.</p>
+            </div>
+        </div>
+    </a>
+</div>
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2023
+        </div>
+    </footer> 
+</div>
+    <!--javascript-->
+    <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+    <script>hljs.highlightAll();</script>
+</body></html>

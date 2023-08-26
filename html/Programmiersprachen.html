@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite rund um das Thema Responsive Design...">
+    <title>Thema</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body><div class="container">
+    <header role="banner">
+        <h1>Webseite</h1>
+        <img src="../images/Logo-min.svg" alt="Website Logo" id="header-logo">
+    </header>
+    <nav role="navigation" aria-label="Hauptnavigation">
+        <!-- Ihre Links -->
+        <a href="../index.html" class="nav-link">Start</a>
+    </nav>
+    <main role="main">
+
+<!--update 4-6-23 Programmiersprachen-->
+<h1>Programmiersprachen</h1>
+<p>Aufgaben zum C/C++ Kurs / Universität Regensburg / Fakultät Physik</p>
+<pre><code># ChatGPT
+Aufgabe: &quot; &quot;
+
+Entwickeln Sie ein Programm in den Programmiersprachen C, C++, Python, Arduino und PHP. 
+
+Das Programm soll: Bei fehlerhaften Eingaben (z.B. wenn der Benutzer keine Zahl eingibt) 
+sollte das Programm den Benutzer darauf hinweisen und ihn erneut zur Eingabe auffordern.
+
+Anforderungen:
+
+-   Implementieren Sie Fehlerprüfungen für die Eingabe.
+-   Kommentieren Sie den Code auf Deutsch, wo es sinnvoll und notwendig ist.
+-   Befolgen Sie die Best Practices
+
+Nachdem Sie das Programm in allen fünf Programmiersprachen erstellt haben, 
+dokumentieren Sie die Testergebnisse in Markdown.
+</code></pre>
+<h1>Code auszuführen</h1>
+<h3>C:</h3>
+<ol>
+<li>Installieren Sie einen C-Compiler, z. B. GCC.</li>
+<li>Speichern Sie den Code in einer Datei namens <code>hello.c</code>.</li>
+<li>Öffnen Sie das Terminal oder die Kommandozeile.</li>
+<li>Kompilieren Sie den Code mit: <code>gcc hello.c -o hello</code></li>
+<li>Führen Sie das Programm aus: <code>./hello</code> (oder <code>hello.exe</code> auf Windows).</li>
+</ol>
+<h3>C++:</h3>
+<ol>
+<li>Installieren Sie einen C++-Compiler, z. B. G++.</li>
+<li>Speichern Sie den Code in einer Datei namens <code>hello.cpp</code>.</li>
+<li>Öffnen Sie das Terminal oder die Kommandozeile.</li>
+<li>Kompilieren Sie den Code mit: <code>g++ hello.cpp -o hello</code></li>
+<li>Führen Sie das Programm aus: <code>./hello</code> (oder <code>hello.exe</code> auf Windows).</li>
+</ol>
+<h3>Python:</h3>
+<ol>
+<li>Installieren Sie Python von <a href="https://www.python.org/">python.org</a>.</li>
+<li>Speichern Sie den Code in einer Datei namens <code>hello.py</code>.</li>
+<li>Öffnen Sie das Terminal oder die Kommandozeile.</li>
+<li>Führen Sie das Skript aus: <code>python hello.py</code></li>
+</ol>
+<h3>Arduino:</h3>
+<ol>
+<li>Installieren Sie die Arduino IDE von der <a href="https://www.arduino.cc/">Arduino-Website</a>.</li>
+<li>Öffnen Sie die Arduino IDE und kopieren Sie den Code in das Textfeld.</li>
+<li>Verbinden Sie Ihren Arduino über USB.</li>
+<li>Wählen Sie unter <code>Werkzeuge</code> -&gt; <code>Port</code> den entsprechenden COM-Port aus.</li>
+<li>Klicken Sie auf <code>Hochladen</code>.</li>
+<li>Öffnen Sie den Seriellen Monitor, um Eingaben zu tätigen und Ausgaben zu sehen.</li>
+</ol>
+<h3>PHP:</h3>
+<ol>
+<li>Installieren Sie PHP von <a href="https://www.php.net/">php.net</a>.</li>
+<li>Speichern Sie den Code in einer Datei namens <code>hello.php</code>.</li>
+<li>Öffnen Sie das Terminal oder die Kommandozeile.</li>
+<li>Führen Sie das Skript aus: <code>php hello.php</code></li>
+</ol>
+<h1>Makefile</h1>
+<p>Ein <code>Makefile</code> ist ein nützliches Tool, um Build-Prozesse zu automatisieren. Es ist besonders hilfreich, wenn Sie mehrere Dateien haben oder Abhängigkeiten zwischen diesen Dateien bestehen. Für den bereitgestellten Code (eine einfache <code>hello.c</code> für C und <code>hello.cpp</code> für C++) kann ein <code>Makefile</code> recht einfach sein.</p>
+<p>Hier ist ein <code>Makefile</code>, das sowohl für den C- als auch für den C++-Code verwendet werden kann:</p>
+<pre><code class="language-makefile"># Compiler und Flags definieren
+CC = gcc
+CXX = g++
+CFLAGS = -std=c17 -Wall -O2
+CXXFLAGS = -std=c++20 -Wall -O2
+LDFLAGS = 
+
+# Ziel- und Quell-Dateien definieren
+C_SOURCES = main.c
+CPP_SOURCES = main.cpp
+C_OBJECTS = $(C_SOURCES:.c=.o)
+CPP_OBJECTS = $(CPP_SOURCES:.cpp=.o)
+TARGET_C = main_c
+TARGET_CPP = main_cpp
+
+# Regel, um das C-Programm zu erstellen
+$(TARGET_C): $(C_OBJECTS)
+    $(CC) $(C_OBJECTS) -o $(TARGET_C) $(LDFLAGS)
+
+# Regel, um das C++-Programm zu erstellen
+$(TARGET_CPP): $(CPP_OBJECTS)
+    $(CXX) $(CPP_OBJECTS) -o $(TARGET_CPP) $(LDFLAGS)
+
+# Regel, um C-Objekt-Dateien zu erstellen
+%.o: %.c
+    $(CC) -c $(CFLAGS) $&lt; -o $@
+
+# Regel, um C++-Objekt-Dateien zu erstellen
+%.o: %.cpp
+    $(CXX) -c $(CXXFLAGS) $&lt; -o $@
+
+# Zusätzliche nützliche Regeln
+clean:
+    rm -f $(C_OBJECTS) $(CPP_OBJECTS) $(TARGET_C) $(TARGET_CPP)
+
+all: $(TARGET_C) $(TARGET_CPP)
+</code></pre>
+<p>Um die Programme zu kompilieren, können Sie folgende Befehle verwenden:</p>
+<ul>
+<li>Für das C-Programm: <code>make $(TARGET_C)</code></li>
+<li>Für das C++-Programm: <code>make $(TARGET_CPP)</code></li>
+<li>Für beide Programme: <code>make all</code></li>
+<li>Zum Bereinigen der kompilierten Dateien: <code>make clean</code></li>
+</ul>
+<p>Stellen Sie sicher, dass Sie die Variablen <code>C_SOURCES, CPP_SOURCES, TARGET_C und TARGET_CPP</code> an Ihren eigenen Code anpassen.</p>
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2023
+        </div>
+    </footer> 
+</div>
+    <!--javascript-->
+    <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+    <script>hljs.highlightAll();</script>
+</body></html>

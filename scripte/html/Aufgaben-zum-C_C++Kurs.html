@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite rund um das Thema Responsive Design...">
+    <title>Thema</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body><div class="container">
+    <header role="banner">
+        <h1>Webseite</h1>
+        <img src="../images/Logo-min.svg" alt="Website Logo" id="header-logo">
+    </header>
+    <nav role="navigation" aria-label="Hauptnavigation">
+        <!-- Ihre Links -->
+        <a href="../index.html" class="nav-link">Start</a>
+    </nav>
+    <main role="main">
+
+<!--update 4-6-23 Aufgaben zum C/C++ Kurs-->
+<h1>Aufgaben zum C/C++ Kurs</h1>
+<p>Quelle: Universität Regensburg / Fakultät Physik</p>
+<ol>
+<li>Aufgabe: "Schreiben Sie ein Programm, das den Namen des Benutzers einliest und ihn dann mit seinem Namen begrüßt. Verwenden Sie sowohl printf bzw. scanf als auch cout und cin."</li>
+</ol>
+<pre><code class="language-C">// Quellcode in C
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;ctype.h&gt;
+
+int istGueltigerName(char name[]) {
+    for (int i = 0; i &lt; strlen(name); i++) {
+        if (!isalpha(name[i]) &amp;&amp; name[i] != ' ') {
+            return 0; // Falsch, wenn ein ungültiges Zeichen gefunden wird
+        }
+    }
+    return 1; // Richtig, wenn alle Zeichen gültig sind
+}
+
+int main() {
+    char name[50];
+
+    while (1) {
+        printf(&quot;Bitte geben Sie Ihren Namen ein: &quot;);
+        scanf(&quot; %49[^\n]&quot;, name); // Eingabe von bis zu 49 Zeichen plus Null-Terminator
+
+        if (istGueltigerName(name)) {
+            printf(&quot;Hallo, %s!\n&quot;, name);
+            break; // Schleife verlassen, wenn gültiger Name
+        } else {
+            printf(&quot;Ungültige Eingabe. Bitte geben Sie einen gültigen Namen ein.\n&quot;);
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+<pre><code class="language-C++">// Quellcode in C++
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;
+
+bool istGueltigerName(const std::string &amp;name) {
+    for (char c : name) {
+        if (!std::isalpha(c) &amp;&amp; c != ' ') {
+            return false; // Falsch, wenn ein ungültiges Zeichen gefunden wird
+        }
+    }
+    return true; // Richtig, wenn alle Zeichen gültig sind
+}
+
+int main() {
+    std::string name;
+
+    while (true) {
+        std::cout &lt;&lt; &quot;Bitte geben Sie Ihren Namen ein: &quot;;
+        std::cin &gt;&gt; name;
+
+        if (istGueltigerName(name)) {
+            std::cout &lt;&lt; &quot;Hallo, &quot; &lt;&lt; name &lt;&lt; &quot;!&quot; &lt;&lt; std::endl;
+            break; // Schleife verlassen, wenn gültiger Name
+        } else {
+            std::cout &lt;&lt; &quot;Ungültige Eingabe. Bitte geben Sie einen gültigen Namen ein.&quot; &lt;&lt; std::endl;
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+<pre><code class="language-Python"># Quellcode in Python
+def ist_gueltiger_name(name):
+    return all(c.isalpha() or c == ' ' for c in name)
+
+while True:
+    name = input(&quot;Bitte geben Sie Ihren Namen ein: &quot;)
+
+    if ist_gueltiger_name(name):
+        print(f&quot;Hallo, {name}!&quot;)
+        break
+    else:
+        print(&quot;Ungültige Eingabe. Bitte geben Sie einen gültigen Namen ein.&quot;)
+
+</code></pre>
+<pre><code class="language-PHP">// Quellcode in PHP
+&lt;?php
+function istGueltigerName($name) {
+    return ctype_alpha(str_replace(' ', '', $name));
+}
+
+while (true) {
+    echo &quot;Bitte geben Sie Ihren Namen ein: &quot;;
+    $name = trim(fgets(STDIN));
+
+    if (istGueltigerName($name)) {
+        echo &quot;Hallo, $name!\n&quot;;
+        break;
+    } else {
+        echo &quot;Ungültige Eingabe. Bitte geben Sie einen gültigen Namen ein.\n&quot;;
+    }
+}
+?&gt;
+</code></pre>
+<pre><code class="language-C++">// Quellcode in Arduino
+String name;
+
+bool istGueltigerName(String name) {
+    for (unsigned int i = 0; i &lt; name.length(); i++) {
+        if (!isAlpha(name[i]) &amp;&amp; name[i] != ' ') {
+            return false;
+        }
+    }
+    return true;
+}
+
+void setup() {
+    Serial.begin(115200);
+    Serial.println(&quot;Bitte geben Sie Ihren Namen ein:&quot;);
+}
+void loop() {
+    if (Serial.available()) {
+        name = Serial.readStringUntil('\n');
+
+        if (istGueltigerName(name)) {
+            Serial.print(&quot;Hallo, &quot;);
+            Serial.print(name);
+            Serial.println(&quot;!&quot;);
+            while(1); // Programm beenden
+        } else {
+            Serial.println(&quot;Ungültige Eingabe. Bitte geben Sie einen gültigen Namen ein.&quot;);
+        }
+    }
+}
+</code></pre>
+<p><strong>Testergebnisse:</strong></p>
+<pre><code>Bitte geben Sie Ihren Namen ein: 22
+Ungültige Eingabe. Bitte geben Sie einen gültigen Namen ein.
+
+Bitte geben Sie Ihren Namen ein: Jan Unger
+Hallo, Jan Unger!
+
+Bitte geben Sie Ihren Namen ein: Jan
+Hallo, Jan!
+</code></pre>
+<ol>
+<li>Aufgabe: ""</li>
+</ol>
+<pre><code class="language-C">// Quellcode in C
+
+</code></pre>
+<pre><code class="language-C++">// Quellcode in C++
+
+</code></pre>
+<pre><code class="language-Python"># Quellcode in Python
+
+</code></pre>
+<pre><code class="language-PHP">// Quellcode in PHP
+
+</code></pre>
+<pre><code class="language-C++">// Quellcode in Arduino
+
+</code></pre>
+<p><strong>Testergebnisse:</strong></p>
+<pre><code># Ausgabe
+
+</code></pre>
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2023
+        </div>
+    </footer> 
+</div>
+    <!--javascript-->
+    <script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+    <script>hljs.highlightAll();</script>
+</body></html>

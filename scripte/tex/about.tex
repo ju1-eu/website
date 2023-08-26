@@ -1,0 +1,71 @@
+% vorlage-main.tex
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage{vorlage-design-main}% vorlage-design-main.sty
+% Bildgröße global ändern
+\setkeys{Gin}{width=0.75\linewidth}
+% Literatur
+\addbibresource{referenzen.bib}
+% Anpassung des Quellcode-Stils
+\lstset{
+  basicstyle=\ttfamily\small,   % Ändern Sie die Schriftgröße des Quellcodes, falls erforderlich.
+  columns=fullflexible,
+  breaklines=true,              % Zeilenumbrüche für zu lange Zeilen
+  postbreak=\mbox{$\hookrightarrow$\space}, % Pfeil am Zeilenumbruch
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {Ö}{{\"O}}1
+           {Ä}{{\"A}}1
+           {Ü}{{\"U}}1
+           {ß}{{\ss}}1,
+  xleftmargin=2em,              % Optional: Linker Abstand
+  xrightmargin=3em,             % Optional: Rechter Abstand
+  showstringspaces=false,
+  showspaces=false             % Zeigt keine Leerzeichen an
+}
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+% Fehler wenn pandoc - Markdown in Latex
+\newcommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+% Titel, Autor und Datum
+\title{Mein optimiertes Dokument}
+%\author{Jan Unger}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\hypertarget{sourcecode-ein-projekt-blog-fuxfcr-technikenthusiasten}{%
+\subsection{SourceCode -- Ein Projekt-Blog für
+Technikenthusiasten}\label{sourcecode-ein-projekt-blog-fuxfcr-technikenthusiasten}}
+
+Im digitalen Zeitalter sind Technologie und Programmierung nicht nur für
+IT-Profis von Bedeutung. Der Blog ``SourceCode'' öffnet für alle
+Technikbegeisterten die Tür zu einer Welt, in der Code und Kreativität
+aufeinandertreffen. Es handelt sich nicht um einen gewöhnlichen Blog,
+sondern um eine Plattform, die sich tiefgehend mit Themen wie Scripten,
+Arduino, Mikrocontrollern und diversen Programmiersprachen wie Python
+und C auseinandersetzt.
+
+Doch nicht nur Softwarethemen stehen im Mittelpunkt. ``SourceCode''
+taucht ebenfalls in die Welt der Vektorgrafiken ein und bietet
+interessante Artikel zum Thema SVG, einem Standardformat für
+zweidimensionale Vektorgrafiken. Das bedeutet, dass Designer und
+Programmierer gleichermaßen wertvolle Informationen finden. Neben diesen
+technisch orientierten Themen bietet der Blog auch Einblicke in den
+Hindernislauf aus sportlicher Perspektive. Dieser Sport stellt eine
+physische und mentale Herausforderung dar.
+
+Insgesamt vermittelt ``SourceCode'' eine Kombination aus technischem
+Know-how und der Leidenschaft für kontinuierliche Weiterbildung. In
+einer sich ständig weiterentwickelnden Welt der
+Technologie. % Platzhalter
+
+\end{document}
