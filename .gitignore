@@ -1,3 +1,6 @@
 # Hier Dateien und Verzeichnisse angeben, die von der Versionskontrolle ausgeschlossen werden sollen
-
+# git reset
 .DS_Store
+.pdf_tex
+video/
+scripte/images/svgoptimizer.zip
